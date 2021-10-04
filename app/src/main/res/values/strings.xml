@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Java Graph</string>
+    <string name="app_mainTitle">
+    Probabilistic Calc!
+    </string>
+    <string name="app_selctor">
+        Select Function
+    </string>
+    <string name="app_next">
+        NEXT
+    </string>
+    <string-array name="functions_array">
+        <item>Root</item>
+    </string-array>
+</resources>

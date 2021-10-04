@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Grafici Java</string>
+    <string name="app_mainTitle">
+        Calcolo Probabilitsico!
+    </string>
+    <string name="app_Selctor">
+        Seleziona Funzione
+    </string>
+    <string name="app_next">
+        AVANTI
+    </string>
+    <string-array name="functions_array">
+        <item>Radice</item>
+    </string-array>
+</resources>
