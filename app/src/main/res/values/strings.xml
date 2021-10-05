@@ -12,4 +12,7 @@
     <string-array name="functions_array">
         <item>Root</item>
     </string-array>
+    <string name="app_calc">
+        CALC
+    </string>
 </resources>

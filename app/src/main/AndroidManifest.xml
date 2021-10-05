@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GraficiCalcolo">
         <activity
-            android:name=".ChartActivity"
+            android:name=".ChartActivity_"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

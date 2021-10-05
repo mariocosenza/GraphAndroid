@@ -10,6 +10,9 @@
     <string name="app_next">
         AVANTI
     </string>
+    <string name="app_calc">
+        CALCOLA
+    </string>
     <string-array name="functions_array">
         <item>Radice</item>
     </string-array>

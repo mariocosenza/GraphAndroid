@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#1565c0"
     tools:context=".MainActivity">
 
     <TextView
@@ -23,17 +24,31 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="89dp"
         android:text="@string/app_next"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="593dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_spinner" />
 
     <Spinner
         android:id="@+id/app_spinner"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="216dp"
         android:entries="@array/functions_array"
         android:textAlignment="center"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="353dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_oggTitle"
+        app:layout_constraintVertical_bias="0.52" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
