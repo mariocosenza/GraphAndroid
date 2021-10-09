@@ -5,89 +5,99 @@
     android:id="@+id/activityChart"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChartActivity_">
+    tools:context=".ChartActivity_"
+
+    >
+
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="106dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="158dp"
-        android:layout_marginEnd="165dp"
-        android:layout_marginBottom="17dp"
-        android:text="TextView"
+        android:id="@+id/textHelpTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/text_help_points"
         android:textAlignment="center"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textHelPI"
+        app:layout_constraintEnd_toStartOf="@+id/editNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scatterChart" />
+
+    <TextView
+        android:id="@+id/textHelPI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="145dp"
+        android:text="@string/text_help_pi"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textOutPI"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textHelpTotal" />
+
+    <TextView
+        android:id="@+id/textOutPI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="157dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNumber"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.github.mikephil.charting.charts.ScatterChart
+        android:id="@+id/scatterChart"
+        android:layout_width="367dp"
+        android:layout_height="398dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="33dp"
         app:layout_constraintBottom_toTopOf="@+id/editNumber"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="165dp"
-        android:layout_marginBottom="27dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNumber" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="177dp"
-        android:layout_marginBottom="150dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCalc"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
     <Button
         android:id="@+id/buttonCalc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="91dp"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="35dp"
+        android:onClick="sendValue"
         android:text="@string/app_calc"
+        android:textAlignment="center"
+        app:cornerRadius="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.838"
-        android:onClick="sendValue"
-        />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editNumber"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="181dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="181dp"
-        android:layout_marginBottom="29dp"
+        android:layout_width="96dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="158dp"
+        android:autofillHints="no"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/textHelpTotal"
+        app:layout_constraintTop_toBottomOf="@+id/scatterChart" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

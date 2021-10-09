@@ -4,7 +4,7 @@
     <string name="app_mainTitle">
         Calcolo Probabilitsico!
     </string>
-    <string name="app_Selctor">
+    <string name="app_selector">
         Seleziona Funzione
     </string>
     <string name="app_next">
@@ -15,5 +15,15 @@
     </string>
     <string-array name="functions_array">
         <item>Radice</item>
+        <item>Trova PI</item>
     </string-array>
+    <string name="text_help_pi">
+        PI:
+    </string>
+    <string name="text_help_points">
+        Punti Totali:
+    </string>
+    <string name="text_randomPoint">
+        Punti Random
+    </string>
 </resources>
