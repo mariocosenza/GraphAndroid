@@ -15,9 +15,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="45dp"
         android:layout_marginEnd="21dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="23dp"
         android:text="@string/text_help_points"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -28,26 +28,27 @@
 
     <TextView
         android:id="@+id/textHelPI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
         android:layout_marginStart="66dp"
-        android:layout_marginEnd="87dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="81dp"
         android:layout_marginBottom="145dp"
         android:text="@string/text_help_pi"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textOutPI"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textHelpTotal" />
 
     <TextView
         android:id="@+id/textOutPI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
         android:layout_marginStart="176dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="177dp"
         android:layout_marginBottom="157dp"
         android:textAlignment="center"
@@ -56,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNumber"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <com.github.mikephil.charting.charts.ScatterChart
         android:id="@+id/scatterChart"
@@ -84,18 +85,22 @@
         app:cornerRadius="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_gravity="center"
+
+        />
 
     <EditText
         android:id="@+id/editNumber"
         android:layout_width="96dp"
         android:layout_height="45dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="158dp"
         android:autofillHints="no"
         android:ems="10"
         android:inputType="number"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textOutPI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textHelpTotal"
         app:layout_constraintTop_toBottomOf="@+id/scatterChart" />

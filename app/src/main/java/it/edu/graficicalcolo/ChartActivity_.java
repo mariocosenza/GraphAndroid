@@ -15,6 +15,9 @@ import com.github.mikephil.charting.charts.ScatterChart;
 import com.github.mikephil.charting.data.ScatterData;
 import com.github.mikephil.charting.data.ScatterDataSet;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 
 public class ChartActivity_ extends AppCompatActivity {
     private EditText editNumber;
@@ -36,7 +39,7 @@ public class ChartActivity_ extends AppCompatActivity {
 
     public void sendValue (View view) {
         ca.findPI(getSpnner());
-        textOutPI.setText(String.valueOf(PI_AVG));
+        textOutPI.setText(NumberFormat.getNumberInstance(Locale.getDefault()).format(PI_AVG));
         scatterChart.invalidate();
         ScatterDataSet scatterDataSet = new ScatterDataSet(scatterEntries, "Point");
         ScatterData scatterData = new ScatterData(scatterDataSet);

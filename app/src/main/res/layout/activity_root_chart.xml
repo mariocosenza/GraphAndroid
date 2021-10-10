@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RootChart"
-    android:background="@color/materialBackground">
+    >
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/lineChart"
@@ -15,7 +15,7 @@
         android:layout_marginTop="19dp"
         android:layout_marginEnd="22dp"
         android:layout_marginBottom="37dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/textViewRootValue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,37 +24,37 @@
         android:id="@+id/materialButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="81dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="35dp"
+        android:onClick="onButtonClick"
         android:text="@string/app_calc"
         app:cornerRadius="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="312dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="49dp"
+        android:id="@+id/textViewRootValue"
+        android:layout_width="314dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="55dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="34dp"
-        android:text="TextView"
+        android:gravity="center"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/editTextRooting"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lineChart" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal"
+        android:id="@+id/editTextRooting"
         android:layout_width="190dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginStart="31dp"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="59dp"
@@ -62,17 +62,17 @@
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewRootValue" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="42dp"
-        android:text="TextView"
+        android:text="@string/text_rooting"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewRootValue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

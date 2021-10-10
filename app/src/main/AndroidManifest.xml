@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GraficiCalcolo">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
+        <activity
             android:name=".RootChart"
             android:exported="true" />
         <activity
