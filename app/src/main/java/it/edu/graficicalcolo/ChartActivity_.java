@@ -3,9 +3,9 @@ package it.edu.graficicalcolo;
 import static it.edu.graficicalcolo.CalcoloApprossimato.PI_AVG;
 import static it.edu.graficicalcolo.CalcoloApprossimato.scatterEntries;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -21,7 +21,7 @@ import java.util.Locale;
 
 public class ChartActivity_ extends AppCompatActivity {
     private EditText editNumber;
-    private Button buttonCalc;
+
     private TextView textOutPI;
     private ScatterChart scatterChart;
     CalcoloApprossimato ca = new CalcoloApprossimato();
@@ -32,11 +32,11 @@ public class ChartActivity_ extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chart);
         editNumber = findViewById(R.id.editNumber);
-        buttonCalc = findViewById(R.id.buttonCalc);
         textOutPI = findViewById(R.id.textOutPI);
         scatterChart = findViewById(R.id.scatterChart);
     }
 
+    @SuppressLint("sendValue")
     public void sendValue (View view) {
         ca.findPI(getSpnner());
         textOutPI.setText(NumberFormat.getNumberInstance(Locale.getDefault()).format(PI_AVG));
