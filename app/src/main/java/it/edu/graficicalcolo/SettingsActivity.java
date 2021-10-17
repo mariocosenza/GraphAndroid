@@ -3,8 +3,6 @@ package it.edu.graficicalcolo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
 
 public class SettingsActivity extends AppCompatActivity {
 

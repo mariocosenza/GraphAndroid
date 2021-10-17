@@ -18,7 +18,7 @@ public class RootChart extends AppCompatActivity {
     private EditText editRooting;
     private TextView textViewRoot;
     private LineChart lineChart;
-    private final ArrayList lineEntry = new ArrayList<>();
+    private final ArrayList<Entry> lineEntry = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class RootChart extends AppCompatActivity {
         setContentView(R.layout.activity_root_chart);
         editRooting = findViewById(R.id.editTextRooting);
         textViewRoot = findViewById(R.id.textViewRootValue);
-        lineChart = (LineChart) findViewById(R.id.lineChart);
+        lineChart = findViewById(R.id.lineChart);
 
     }
 

@@ -1,6 +1,7 @@
 package it.edu.graficicalcolo;
 
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -8,7 +9,7 @@ import java.util.Random;
 public class CalcoloApprossimato {
 
     public static double PI_AVG = 0;
-    public static ArrayList scatterEntries = new ArrayList<>();
+    public static ArrayList<Entry> scatterEntries = new ArrayList<>();
 
       // TODO add control for memory usage and max point - add ArrayList type and block it from override values after first initialization
     public double findPI (int totalPoint) {

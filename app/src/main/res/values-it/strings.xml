@@ -64,4 +64,6 @@
 
         </p>
     </string>
+    <string name="text_settings">impostazioni</string>
+    <string name="text_insertTotalpoint">Inserisci Totale Punti</string>
 </resources>
