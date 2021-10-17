@@ -4,7 +4,9 @@ plugins {
 
 android {
     compileSdk 30
-
+        lintOptions {
+            abortOnError false
+        }
     defaultConfig {
         applicationId "it.edu.graficicalcolo"
         minSdk 28
