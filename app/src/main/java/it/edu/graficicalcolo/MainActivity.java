@@ -7,6 +7,10 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 /**
  * Grafici Java
  * Copyright (C) 2021  Mario Cosenza
@@ -27,6 +31,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     Spinner app_spinner;
+    AdView myadview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         app_spinner = findViewById(R.id.app_spinner);
+
+        MobileAds.initialize(this, initializationStatus -> {
+        });
+        myadview = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        myadview.loadAd(adRequest);
     }
+
 
     public void selectActivity(View view) {
         if (app_spinner.getSelectedItem().toString().equals("Root") || app_spinner.getSelectedItem().toString().equals("Radice")) {
