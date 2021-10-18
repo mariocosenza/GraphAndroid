@@ -1,3 +1,3 @@
 # GraphAndroid
 School Project App for Android with Java
-![Main Activity](https://1drv.ms/u/s!AuaD5ilQwhIfm3PrL0Wv3GKQXwa6)
+![Main Activity](https://am3pap005files.storage.live.com/y4pUmUcpl0ISFt8EpLuJWFCc6iJA0rmfTm5aPJ2CfhBbk7j27qXqj4zrXPdFmZPywPiRftD79KH_wDa0K1_kveN4pcppEGCuka71vpfGjgWPkA3AnZglZ9DsCwQeRLnT00gLyI1ITPISZe5AmFg0Ax1IzypzGg4t0_-trhQTVz-hPy66iUxUrVqdA_3hnyRKcPL/Screenshot_1634580941.png?psid=1&width=582&height=1229)
