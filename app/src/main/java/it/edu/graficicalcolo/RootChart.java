@@ -15,10 +15,10 @@ import com.github.mikephil.charting.data.LineDataSet;
 import java.util.ArrayList;
 
 public class RootChart extends AppCompatActivity {
+    private final ArrayList<Entry> lineEntry = new ArrayList<>();
     private EditText editRooting;
     private TextView textViewRoot;
     private LineChart lineChart;
-    private final ArrayList<Entry> lineEntry = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +31,13 @@ public class RootChart extends AppCompatActivity {
     }
 
     public void onButtonClick(View v) {
-        textViewRoot.setText(getResources().getString(R.string.text_rootValue) +": " + new ProbabilisticCalc().sqrtAproximated(Integer.parseInt(editRooting.getText().toString())));
+        textViewRoot.setText(getResources().getString(R.string.text_rootValue) + ": " + new ProbabilisticCalc().sqrtAproximated(Integer.parseInt(editRooting.getText().toString())));
         rootPoint();
     }
 
     private void rootPoint() {
-        for (double x = 0; x <100; x += 0.1) {
-            lineEntry.add(new Entry((float) x,(float) Math.sqrt(x)));
+        for (double x = 0; x < 100; x += 0.1) {
+            lineEntry.add(new Entry((float) x, (float) Math.sqrt(x)));
         }
         lineChart.invalidate();
         LineDataSet lineDataSet = new LineDataSet(lineEntry, "Point");
