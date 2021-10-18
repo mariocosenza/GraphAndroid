@@ -12,7 +12,15 @@
         android:theme="@style/Theme.GraficiCalcolo">
         <activity
             android:name=".SettingsActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".RootChart"
             android:exported="true" />

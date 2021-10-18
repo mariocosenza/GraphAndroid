@@ -19,7 +19,7 @@ public class CalcoloApprossimato {
         double x, y;
         int inside = 0;
         Random random = new Random();
-        if (totalPoint > 0)
+        if ((totalPoint > 0) && (totalPoint < 50000))
             for (int i = 0; i < totalPoint; i++) {
                 x = random.nextDouble();
                 y = random.nextDouble();
