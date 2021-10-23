@@ -32,9 +32,10 @@ public class NumericCalc {
             Fb = getFunction(Xb);
             Xm = (Xa+Xb)/2;
             Fm = getFunction(Xm);
-            if (Fm*Fa<0);
-            else Xa=Xm;
-            if (Xa!=Xm) {Xb = Xm;}
+            if (Fm*Fa >= 0) Xa=Xm;
+            if (Xa!=Xm) {
+                Xb = Xm;
+            }
             if ((Math.abs(Xb-Xa)< xacc)|| (Fm ==0))
             {
                 end = true;
@@ -56,7 +57,8 @@ public class NumericCalc {
     public double K (double xi, double xa, double xb)
     {double lim, cond;
         cond=getFunction(xi)*getFunction(xa);
-        if (cond<0) lim=xa; else lim=xb;
+        if (cond<0) lim=xa;
+        else lim=xb;
         return (getFunction(xi)-getFunction(lim))/(xi-lim);
     }
     public double corde(double a, double b, double xacc)
@@ -64,7 +66,11 @@ public class NumericCalc {
     boolean fine = false;
         double Fa, Fb, Xi = 0, Fi, Xold, tmp;
         if (a>b) /* estremi non ordinati */
-        {tmp=a; a=b; b=tmp; }
+        {
+            tmp=a;
+            a=b;
+            b=tmp;
+        }
         Fa=getFunction(a);
         Fb=getFunction(b);
         if (Fa*Fb>=0)
@@ -77,8 +83,12 @@ public class NumericCalc {
             Fi=getFunction(Xi);
             if ((Math.abs(Xi-Xold)< xacc) || (Fi==0)) fine=true;
             else Xold=Xi; }
-        if (fine) {System.out.println("eseguite %d iterazioni:" + i); return Xi;}
-        else { System.out.println("eseguitetroppe iterazioni: ");
+        if (fine) {
+            System.out.println("eseguite %d iterazioni:" + i);
+        return Xi;
+        }
+        else {
+            System.out.println("eseguitetroppe iterazioni: ");
         }
         return Xi;
     }
@@ -91,22 +101,31 @@ public class NumericCalc {
         boolean fine=false;
         double Fa, Fb, Xi = 0, Fi, Xnew,Xold, tmp;
         if (a>b) /* estremi non ordinati */
-        {tmp=a; a=b; b=tmp;}
+        {
+            tmp=a;
+            a=b;
+            b=tmp;}
         Fa=getFunction(a);
         Fb=getFunction(b);
         if (Fa*Fb>=0) {
             System.out.println("intervallo non valido\n");
            }
-
         Xold=a;
         Xnew=b;
+
         for (i=0; i<JMAX && !fine; i++) {
             Xi=-getFunction(Xold)/Ks(Xnew,Xold) + Xold;
             Fi=getFunction(Xi);
             if ((Math.abs(Xi-Xold)< xacc) || (Fi==0)) fine=true;
-            else {Xold=Xnew;Xnew=Xi;}
+            else {
+                Xold=Xnew;
+                Xnew=Xi;
+            }
         }
-        if (fine) {System.out.println("eseguite %d iterazioni\n"+ i); return Xi;}
+        if (fine) {
+            System.out.println("eseguite %d iterazioni\n"+ i);
+            return Xi;
+        }
         else {
             System.out.println("eseguitetroppe iterazioni\n");
             }
@@ -123,7 +142,10 @@ public class NumericCalc {
         boolean fine=false;
         double Fa, Fb, Xi = 0, Fi, Xold, tmp;
         if (a>b) /* estremi non ordinati */
-        {tmp=a; a=b; b=tmp;}
+        { tmp=a;
+          a=b;
+          b=tmp;
+        }
         Fa=getFunction(a);
         Fb=getFunction(b);
         if (Fa*Fb>=0) {
