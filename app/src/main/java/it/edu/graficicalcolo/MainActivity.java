@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        app_spinner = findViewById(R.id.app_spinner);
+        app_spinner = findViewById(R.id.app_spinnerNumeric);
 
         MobileAds.initialize(this, initializationStatus -> {
         });

@@ -31,6 +31,23 @@
     <string name="text_rooting">
         Rooting:
     </string>
+    <string-array name="numeric_array">
+        <item>Bisection</item>
+        <item>Tangent</item>
+        <item>Rope</item>
+        <item>Secant</item>
+    </string-array>
+
+
+
+
+
+
+
+
+
+
+
     <string name="license"><![CDATA[
       <h1> Grafici Java </h1>
       <p>

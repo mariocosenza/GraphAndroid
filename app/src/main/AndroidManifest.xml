@@ -10,29 +10,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GraficiCalcolo">
+        <activity
+            android:name=".NumericActivity"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-9200929401416768~1986652558"/>
+            android:value="ca-app-pub-9200929401416768~1986652558" />
+
         <activity
             android:name=".SettingsActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="http" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".RootChart"
             android:exported="true" />
-
         <activity
             android:name=".ChartActivity"
             android:exported="true"
-            android:hardwareAccelerated="true"
-            />
+            android:hardwareAccelerated="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
