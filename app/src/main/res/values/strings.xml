@@ -6,6 +6,7 @@
     <string-array name="functions_array">
         <item>Root</item>
         <item>Find PI</item>
+        <item>Numeric Calc</item>
     </string-array>
     <string name="app_calc">CALC</string>
     <string name="text_help_pi">PI:</string>

@@ -8,8 +8,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
+        android:layout_width="124dp"
+        android:layout_height="54dp"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="162dp"
         android:layout_marginBottom="35dp"
@@ -35,13 +35,12 @@
 
     <Spinner
         android:id="@+id/app_spinnerNumeric"
-        android:layout_width="138dp"
+        android:layout_width="163dp"
         android:layout_height="48dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:entries="@array/numeric_array"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/textViewOutRoot"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lineChartNumeric" />
 
@@ -107,14 +106,12 @@
         android:id="@+id/textViewOutRoot"
         android:layout_width="166dp"
         android:layout_height="25dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
         android:text="@string/text_rootNumeric"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/app_spinnerNumeric"
         app:layout_constraintTop_toBottomOf="@+id/lineChartNumeric" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
