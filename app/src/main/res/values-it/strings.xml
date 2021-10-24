@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Grafici Java</string>
-    <string name="app_mainTitle">
-        Calcolo Probabilitsico!
-    </string>
-    <string name="app_selector">
-        Seleziona Funzione
-    </string>
-    <string name="app_next">
-        AVANTI
-    </string>
-    <string name="app_calc">
-        CALCOLA
-    </string>
+    <string name="app_mainTitle">Calcolo Probabilitsico!</string>
+    <string name="app_selector">Seleziona Funzione</string>
+    <string name="app_next">AVANTI</string>
+    <string name="app_calc">CALCOLA</string>
     <string-array name="functions_array">
         <item>Radice</item>
         <item>Trova PI</item>
     </string-array>
-    <string name="text_help_pi">
-        PI:
-    </string>
-    <string name="text_help_points">
-        Punti Totali:
-    </string>
-    <string name="text_randomPoint">
-        Punti Random
-    </string>
-    <string name="text_rootValue">
-        Valore Radice
-    </string>
-    <string name="text_rooting">
-        Radicando:
-    </string>
+    <string name="text_help_pi">PI:</string>
+    <string name="text_help_points">Punti Totali:</string>
+    <string name="text_randomPoint">Punti Random</string>
+    <string name="text_rootValue">Valore Radice</string>
+    <string name="text_rooting">Radicando:</string>
+    <string name="text_settings">impostazioni</string>
+    <string name="text_insertTotalpoint">Inserisci Totale Punti</string>
+    <string name="text_rootNumeric">Radice:</string>
+    <string name="text_ANumeric">A:</string>
+    <string name="text_BNumeric">B:</string>
+    <string-array name="numeric_array">
+        <item>Bisezione</item>
+        <item>Tangente</item>
+        <item>Corda</item>
+        <item>Secante</item>
+    </string-array>
+
+
+
     <string name="license"><![CDATA[
       <h1> Grafici Java </h1>
       <p>
@@ -65,6 +61,5 @@
 
 
     ]]></string>
-    <string name="text_settings">impostazioni</string>
-    <string name="text_insertTotalpoint">Inserisci Totale Punti</string>
+
 </resources>

@@ -8,28 +8,24 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="161dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="35dp"
+        android:layout_width="123dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="24dp"
         android:onClick="selectMethod"
         android:text="@string/app_calc"
         app:cornerRadius="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/lineChartNumeric"
-        android:layout_width="367dp"
-        android:layout_height="400dp"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="21dp"
-        app:layout_constraintBottom_toTopOf="@+id/app_spinnerNumeric"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="398dp"
+        android:layout_height="365dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,84 +33,77 @@
         android:id="@+id/app_spinnerNumeric"
         android:layout_width="138dp"
         android:layout_height="48dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="64dp"
         android:entries="@array/numeric_array"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/textViewOutRoot"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lineChartNumeric" />
+        app:layout_constraintStart_toEndOf="@+id/lineChartNumeric"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewA"
         android:layout_width="77dp"
         android:layout_height="26dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="40dp"
         android:text="@string/text_ANumeric"
         android:textAlignment="center"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/textViewB"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lineChartNumeric"
         app:layout_constraintTop_toBottomOf="@+id/app_spinnerNumeric" />
 
     <TextView
         android:id="@+id/textViewB"
         android:layout_width="75dp"
         android:layout_height="29dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="125dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginBottom="154dp"
         android:text="@string/text_BNumeric"
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lineChartNumeric"
         app:layout_constraintTop_toBottomOf="@+id/textViewA" />
 
     <EditText
         android:id="@+id/editTextNumberDecimalA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="51dp"
+        android:layout_width="174dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:autofillHints="no"
         android:ems="10"
         android:hint="@string/text_ANumeric"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextNumberDecimalB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_spinnerNumeric" />
 
     <EditText
         android:id="@+id/editTextNumberDecimalB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="174dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="73dp"
         android:autofillHints="no"
         android:ems="10"
         android:hint="@string/text_BNumeric"
         android:inputType="numberDecimal"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimalA" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textViewOutRoot"
-        android:layout_width="166dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
+        android:layout_width="151dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="7dp"
         android:text="@string/text_rootNumeric"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/app_spinnerNumeric"
-        app:layout_constraintTop_toBottomOf="@+id/lineChartNumeric" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
