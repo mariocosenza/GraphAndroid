@@ -12,7 +12,7 @@ public class NumericCalc {
     public double bisection (double a, double b, double xacc) {
         boolean end = false;
         double Xa = 0, Xb = 0, Fa, Fb, Xm = 0, Fm, tmp;
-        if (a>b) {
+        if (a>b) { //extreme not ordered
             tmp = a;
             a = b;
             b = tmp;
@@ -54,18 +54,18 @@ public class NumericCalc {
 
     }
 
-    public double K (double xi, double xa, double xb)
+    public double Kangular (double xi, double xa, double xb)
     {double lim, cond;
         cond=getFunction(xi)*getFunction(xa);
         if (cond<0) lim=xa;
         else lim=xb;
         return (getFunction(xi)-getFunction(lim))/(xi-lim);
     }
-    public double corde(double a, double b, double xacc)
+    public double rope(double a, double b, double xacc)
     { int i;
-    boolean fine = false;
+    boolean end = false;
         double Fa, Fb, Xi = 0, Fi, Xold, tmp;
-        if (a>b) /* estremi non ordinati */
+        if (a>b) //extreme not ordered
         {
             tmp=a;
             a=b;
@@ -74,33 +74,33 @@ public class NumericCalc {
         Fa=getFunction(a);
         Fb=getFunction(b);
         if (Fa*Fb>=0)
-        {System.out.println("intervallo non valido");
+        {System.out.println("Invalid range");
 
         }
-        Xold=(a+b)*0.5; /*inizializzazione*/
-        for (i=0; i<JMAX && !fine; i++) {
-            Xi=-getFunction(Xold)/K(Xold,a,b) + Xold;
+        Xold=(a+b)*0.5; //initialization
+        for (i=0; i<JMAX && !end; i++) {
+            Xi=-getFunction(Xold)/Kangular(Xold,a,b) + Xold;
             Fi=getFunction(Xi);
-            if ((Math.abs(Xi-Xold)< xacc) || (Fi==0)) fine=true;
+            if ((Math.abs(Xi-Xold)< xacc) || (Fi==0)) end=true;
             else Xold=Xi; }
-        if (fine) {
-            System.out.println("eseguite %d iterazioni:" + i);
+        if (end) {
+            System.out.println("performed %d iteration:" + i);
         return Xi;
         }
         else {
-            System.out.println("eseguitetroppe iterazioni: ");
+            System.out.println("Performed too much iteration: ");
         }
         return Xi;
     }
 
-    double Ks(double Xnew, double Xold) {
+    double Ksangular(double Xnew, double Xold) {
         return (getFunction(Xnew)-getFunction(Xold))/(Xnew-Xold);
     }
-    double secanti(double a, double b, double xacc) {
+    double secant(double a, double b, double xacc) {
         int i;
-        boolean fine=false;
+        boolean end=false;
         double Fa, Fb, Xi = 0, Fi, Xnew,Xold, tmp;
-        if (a>b) /* estremi non ordinati */
+        if (a>b) // extreme not ordered
         {
             tmp=a;
             a=b;
@@ -108,40 +108,39 @@ public class NumericCalc {
         Fa=getFunction(a);
         Fb=getFunction(b);
         if (Fa*Fb>=0) {
-            System.out.println("intervallo non valido\n");
+            System.out.println("Invalid range");
            }
         Xold=a;
         Xnew=b;
 
-        for (i=0; i<JMAX && !fine; i++) {
-            Xi=-getFunction(Xold)/Ks(Xnew,Xold) + Xold;
+        for (i=0; i<JMAX && !end; i++) {
+            Xi=-getFunction(Xold)/ Ksangular(Xnew,Xold) + Xold;
             Fi=getFunction(Xi);
-            if ((Math.abs(Xi-Xold)< xacc) || (Fi==0)) fine=true;
+            if ((Math.abs(Xi-Xold)< xacc) || (Fi==0)) end=true;
             else {
                 Xold=Xnew;
                 Xnew=Xi;
             }
         }
-        if (fine) {
-            System.out.println("eseguite %d iterazioni\n"+ i);
+        if (end) {
+            System.out.println("performed %d iteration: "+ i);
             return Xi;
         }
         else {
-            System.out.println("eseguitetroppe iterazioni\n");
+            System.out.println("Performed too much iteration");
             }
         return Xi;
     }
 
-    private final double DELTA = 0.001;
+    double Ktangular(double xi){
+        double DELTA = 0.001;
+        return (getFunction(xi+ DELTA)-getFunction(xi))/ DELTA;}
 
-    double Kt(double xi){
-        return (getFunction(xi+DELTA)-getFunction(xi))/DELTA;}
-
-    double tangenti(double a, double b, double xacc) {
+    double tangent(double a, double b, double xacc) {
         int i;
-        boolean fine=false;
+        boolean end=false;
         double Fa, Fb, Xi = 0, Fi, Xold, tmp;
-        if (a>b) /* estremi non ordinati */
+        if (a>b) //extreme not ordered
         { tmp=a;
           a=b;
           b=tmp;
@@ -149,20 +148,20 @@ public class NumericCalc {
         Fa=getFunction(a);
         Fb=getFunction(b);
         if (Fa*Fb>=0) {
-            System.out.println("intervallo non valido\n");
+            System.out.println("Invalid range");
              }
-        Xold=(a+b)*0.5; /*inizializz. */
-        for (i=0; i<JMAX && !fine; i++) {
-            Xi=-getFunction(Xold)/Kt(Xold) + Xold;
+        Xold=(a+b)*0.5; //initialization
+        for (i=0; i<JMAX && !end; i++) {
+            Xi=-getFunction(Xold)/ Ktangular(Xold) + Xold;
             Fi=getFunction(Xi);
-            if ((Math.abs(Xi-Xold)< xacc) || (Fi==0)) fine=true;
+            if ((Math.abs(Xi-Xold)< xacc) || (Fi==0)) end=true;
             else Xold=Xi;
         }
-        if (fine) {
-            System.out.println("eseguite %d iterazioni\n"+ i);
+        if (end) {
+            System.out.println("performed %d iteration:"+ i);
             return Xi;}
         else {
-            System.out.println("eseguitetroppe iterazioni\n");
+            System.out.println("Performed too much iteration");
           }
         return Xi;
     }
