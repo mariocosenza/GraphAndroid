@@ -20,12 +20,16 @@
     <string name="text_rootNumeric">Radice:</string>
     <string name="text_ANumeric">A:</string>
     <string name="text_BNumeric">B:</string>
+    <string name="text_labelA">Inserire A:</string>
+    <string name="text_labelB">Inserire B:</string>
     <string-array name="numeric_array">
         <item>Bisezione</item>
         <item>Tangente</item>
         <item>Corda</item>
         <item>Secante</item>
     </string-array>
+    <string name="text_functionLabel">Funzione</string>
+    <string name="text_animateChart">Anima Carta</string>
 
 
 

@@ -3,14 +3,15 @@ package it.edu.graficicalcolo;
 public class NumericCalc {
 
     public double getFunction(double z) {
-        return Math.pow(3,z)-2*Math.pow(2,z)-z+2;
+       return Math.pow(z,3)-2*Math.pow(z,2)-z+2;
+
     }
 
-    private final double EPS = 0.00001;
-    private final double JMAX = 1000;
+    private final double JMAX = 10000;
 
     public double bisection (double a, double b, double xacc) {
         boolean end = false;
+
         double Xa = 0, Xb = 0, Fa, Fb, Xm = 0, Fm, tmp;
         if (a>b) { //extreme not ordered
             tmp = a;
@@ -27,16 +28,16 @@ public class NumericCalc {
             Xa = a;
             Xb = b;
         }
-        for (int i = 0; i<JMAX; i++){
+        for (int i = 0; i<JMAX && !end; i++){
             Fa = getFunction(Xa);
             Fb = getFunction(Xb);
-            Xm = (Xa+Xb)/2;
+            Xm = (Xa+Xb) * 0.5;
             Fm = getFunction(Xm);
             if (Fm*Fa >= 0) Xa=Xm;
             if (Xa!=Xm) {
                 Xb = Xm;
             }
-            if ((Math.abs(Xb-Xa)< xacc)|| (Fm ==0))
+            if ((Math.abs(Xb-Xa)< xacc)||(Fm ==0))
             {
                 end = true;
             }
@@ -49,6 +50,7 @@ public class NumericCalc {
             }
 
         }
+        System.out.println(Xm);
         return Xm;
 
 

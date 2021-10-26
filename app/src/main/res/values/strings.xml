@@ -25,6 +25,10 @@
     <string name="text_settings">settings</string>
     <string name="text_insertTotalpoint">Insert Total Point</string>
     <string name="text_rootNumeric">Root:</string>
+    <string name="text_functionLabel">Function</string>
+    <string name="text_labelA">Enter A:</string>
+    <string name="text_labelB">Enter B:</string>
+    <string name="text_animateChart">Animate Chart</string>
 
 
 
