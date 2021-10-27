@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        app_spinner = findViewById(R.id.app_spinner);
+        app_spinner = findViewById(R.id.app_spinnerNumeric);
 
         MobileAds.initialize(this, initializationStatus -> {
         });
@@ -51,8 +51,10 @@ public class MainActivity extends AppCompatActivity {
     public void selectActivity(View view) {
         if (app_spinner.getSelectedItem().toString().equals("Root") || app_spinner.getSelectedItem().toString().equals("Radice")) {
             startActivity(new Intent(getApplicationContext(), RootChart.class));
-        } else {
+        } else if (app_spinner.getSelectedItem().toString().equals("Find PI") || app_spinner.getSelectedItem().toString().equals("Trova PI")){
             startActivity(new Intent(getApplicationContext(), ChartActivity.class));
+        } else {
+            startActivity(new Intent(getApplicationContext(), NumericActivity.class));
         }
     }
 

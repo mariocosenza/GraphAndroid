@@ -1,36 +1,45 @@
 <resources>
     <string name="app_name">Java Graph</string>
-    <string name="app_mainTitle">
-    Probabilistic Calc!
-    </string>
-    <string name="app_selector">
-        Select Function
-    </string>
-    <string name="app_next">
-        NEXT
-    </string>
+    <string name="app_mainTitle">Probabilistic Calc</string>
+    <string name="app_selector">Select Function</string>
+    <string name="app_next">NEXT</string>
     <string-array name="functions_array">
         <item>Root</item>
         <item>Find PI</item>
+        <item>Numeric Calc</item>
     </string-array>
-    <string name="app_calc">
-        CALC
-    </string>
-    <string name="text_help_pi">
-        PI:
-    </string>
-    <string name="text_help_points">
-        Total points:
-    </string>
-    <string name="text_randomPoint">
-        Random Point
-    </string>
-    <string name="text_rootValue">
-        Root Value
-    </string>
-    <string name="text_rooting">
-        Rooting:
-    </string>
+    <string name="app_calc">CALC</string>
+    <string name="text_help_pi">PI:</string>
+    <string name="text_help_points">Total points:</string>
+    <string name="text_randomPoint">Random Point</string>
+    <string name="text_rootValue">Root Value</string>
+    <string name="text_rooting">Rooting:</string>
+    <string-array name="numeric_array">
+        <item>Bisection</item>
+        <item>Tangent</item>
+        <item>Rope</item>
+        <item>Secant</item>
+    </string-array>
+    <string name="text_ANumeric">A:</string>
+    <string name="text_BNumeric">B:</string>
+    <string name="text_settings">settings</string>
+    <string name="text_insertTotalpoint">Insert Total Point</string>
+    <string name="text_rootNumeric">Root:</string>
+    <string name="text_functionLabel">Function</string>
+    <string name="text_labelA">Enter A:</string>
+    <string name="text_labelB">Enter B:</string>
+    <string name="text_animateChart">Animate Chart</string>
+
+
+
+
+
+
+
+
+
+
+
     <string name="license"><![CDATA[
       <h1> Grafici Java </h1>
       <p>
@@ -64,7 +73,6 @@
 
 
     ]]></string>
-    <string name="text_settings">settings</string>
-    <string name="text_insertTotalpoint">Insert Total Point</string>
+
 
 </resources>

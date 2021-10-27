@@ -72,8 +72,9 @@
 
     <Button
         android:id="@+id/buttonCalc"
-        android:layout_width="110dp"
-        android:layout_height="50dp"
+        android:layout_width="127dp"
+        android:layout_height="51dp"
+        android:layout_gravity="center"
         android:layout_marginStart="150dp"
         android:layout_marginEnd="151dp"
         android:layout_marginBottom="35dp"
@@ -84,7 +85,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_gravity="center"
 
         />
 
