@@ -10,7 +10,7 @@ public class AreaFunction {
     public float internalPoint = 0;
     private final ArrayList<Entry> scatterEntries = new ArrayList<>();
     private final ArrayList<Entry> lineEntries = new ArrayList<>();
-    private final int TOTAL_POINT = 10000;
+    public int TOTAL_POINT = 10000;
 
     public ArrayList<Entry> getScatterEntries() {
         return scatterEntries;
@@ -41,13 +41,13 @@ public class AreaFunction {
         return yMax;
     }
 
-    private Random randomX = new Random();
+    private final Random randomX = new Random();
     public float randomPointX (float a, float b){
         return a+ randomX.nextFloat()*(b-a);
 
     }
 
-    private Random randomY = new Random();
+    private final Random randomY = new Random();
     public float randomPointY (){
         return randomY.nextFloat()*(yMax);
     }

@@ -35,26 +35,30 @@ public class ChartActivity extends AppCompatActivity {
 
 
     public void sendValue(View view) {
-        CalcoloApprossimato ca = new CalcoloApprossimato();
-        ca.findPI(getSpnner());
-        textOutPI.setText(NumberFormat.getNumberInstance(Locale.getDefault()).format(PI_AVG));
-        scatterChart.invalidate();
-        ScatterDataSet scatterDataSet = new ScatterDataSet(ca.getScatterEntries(), "Point");
-        ScatterData scatterData = new ScatterData(scatterDataSet);
-        scatterDataSet.setScatterShapeSize((float) 10);
-        scatterChart.setScaleMinima(1f, 1f);
-        YAxis yAxis = scatterChart.getAxisLeft();
-        yAxis.setAxisMinimum(0f);
-        YAxis YAxisRight = scatterChart.getAxisRight();
-        YAxisRight.setAxisMinimum(0f);
-        scatterChart.getXAxis().setAxisMinimum(0f);
-        scatterChart.getXAxis().setAxisMaximum(1f);
-        scatterChart.setData(scatterData);
-        scatterChart.getDescription().setText(getResources().getString(R.string.text_randomPoint));
+        try {
+            CalcoloApprossimato ca = new CalcoloApprossimato();
+            ca.findPI(getSpinner());
+            textOutPI.setText(NumberFormat.getNumberInstance(Locale.getDefault()).format(PI_AVG));
+            scatterChart.invalidate();
+            ScatterDataSet scatterDataSet = new ScatterDataSet(ca.getScatterEntries(), "Point");
+            ScatterData scatterData = new ScatterData(scatterDataSet);
+            scatterDataSet.setScatterShapeSize((float) 10);
+            scatterChart.setScaleMinima(1f, 1f);
+            YAxis yAxis = scatterChart.getAxisLeft();
+            yAxis.setAxisMinimum(0f);
+            YAxis YAxisRight = scatterChart.getAxisRight();
+            YAxisRight.setAxisMinimum(0f);
+            scatterChart.getXAxis().setAxisMinimum(0f);
+            scatterChart.getXAxis().setAxisMaximum(1f);
+            scatterChart.setData(scatterData);
+            scatterChart.getDescription().setText(getResources().getString(R.string.text_randomPoint));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
-    int getSpnner() throws NullPointerException {
+    int getSpinner() throws NullPointerException {
         return Integer.parseInt(editNumber.getText().toString());
     }
 

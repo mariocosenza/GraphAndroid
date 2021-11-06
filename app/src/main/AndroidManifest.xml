@@ -12,10 +12,14 @@
         android:theme="@style/Theme.GraficiCalcolo">
         <activity
             android:name=".AreaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            />
         <activity
             android:name=".NumericActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -35,7 +39,9 @@
         </activity>
         <activity
             android:name=".RootChart"
-            android:exported="true" />
+            android:exported="true"
+            android:hardwareAccelerated="true"
+            />
         <activity
             android:name=".ChartActivity"
             android:exported="true"
