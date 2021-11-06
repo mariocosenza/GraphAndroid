@@ -32,6 +32,7 @@ import com.google.android.gms.ads.MobileAds;
 public class MainActivity extends AppCompatActivity {
     Spinner app_spinner;
     AdView myadview;
+    private String[] spinnerText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +46,19 @@ public class MainActivity extends AppCompatActivity {
         myadview = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         myadview.loadAd(adRequest);
+        spinnerText = getResources().getStringArray(R.array.functions_array);
     }
 
 
     public void selectActivity(View view) {
-        if (app_spinner.getSelectedItem().toString().equals("Root") || app_spinner.getSelectedItem().toString().equals("Radice")) {
-            startActivity(new Intent(getApplicationContext(), RootChart.class));
-        } else if (app_spinner.getSelectedItem().toString().equals("Find PI") || app_spinner.getSelectedItem().toString().equals("Trova PI")){
+        if (app_spinner.getSelectedItem().toString().equals(spinnerText[0])) {
+            startActivity(new Intent(getApplicationContext(), AreaActivity.class));
+        } else if (app_spinner.getSelectedItem().toString().equals(spinnerText[1])){
             startActivity(new Intent(getApplicationContext(), ChartActivity.class));
-        } else {
+        } else if (app_spinner.getSelectedItem().toString().equals(spinnerText[3])){
             startActivity(new Intent(getApplicationContext(), NumericActivity.class));
+        } else {
+            startActivity(new Intent(getApplicationContext(), RootChart.class));
         }
     }
 

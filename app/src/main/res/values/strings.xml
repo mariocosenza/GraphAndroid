@@ -4,10 +4,12 @@
     <string name="app_selector">Select Function</string>
     <string name="app_next">NEXT</string>
     <string-array name="functions_array">
-        <item>Root</item>
+        <item>Area Chart</item>
         <item>Find PI</item>
         <item>Numeric Calc</item>
+        <item>Root</item>
     </string-array>
+
     <string name="app_calc">CALC</string>
     <string name="text_help_pi">PI:</string>
     <string name="text_help_points">Total points:</string>
@@ -26,19 +28,11 @@
     <string name="text_insertTotalpoint">Insert Total Point</string>
     <string name="text_rootNumeric">Root:</string>
     <string name="text_functionLabel">Function</string>
-    <string name="text_labelA">Enter A:</string>
-    <string name="text_labelB">Enter B:</string>
+    <string name="text_labelA">Enter A</string>
+    <string name="text_labelB">Enter B</string>
     <string name="text_animateChart">Animate Chart</string>
-
-
-
-
-
-
-
-
-
-
+    <string name="text_labelPoint">Enter Total Point</string>
+    <string name="text_Area">Area:</string>
 
     <string name="license"><![CDATA[
       <h1> Grafici Java </h1>
