@@ -9,6 +9,7 @@
         <item>Radice</item>
         <item>Trova PI</item>
         <item>Calcolo Numerico</item>
+        <item>Area Grafico</item>
     </string-array>
     <string name="text_help_pi">PI:</string>
     <string name="text_help_points">Punti Totali:</string>

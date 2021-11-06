@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GraficiCalcolo">
         <activity
+            android:name=".AreaActivity"
+            android:exported="false" />
+        <activity
             android:name=".NumericActivity"
             android:exported="false" />
 

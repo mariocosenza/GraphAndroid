@@ -7,6 +7,7 @@
         <item>Root</item>
         <item>Find PI</item>
         <item>Numeric Calc</item>
+        <item>Area Chart</item>
     </string-array>
     <string name="app_calc">CALC</string>
     <string name="text_help_pi">PI:</string>
@@ -29,15 +30,6 @@
     <string name="text_labelA">Enter A:</string>
     <string name="text_labelB">Enter B:</string>
     <string name="text_animateChart">Animate Chart</string>
-
-
-
-
-
-
-
-
-
 
 
     <string name="license"><![CDATA[
