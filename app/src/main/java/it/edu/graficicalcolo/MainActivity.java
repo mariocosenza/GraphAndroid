@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), AreaActivity.class));
         } else if (app_spinner.getSelectedItem().toString().equals(spinnerText[1])){
             startActivity(new Intent(getApplicationContext(), ChartActivity.class));
-        } else if (app_spinner.getSelectedItem().toString().equals(spinnerText[3])){
+        } else if (app_spinner.getSelectedItem().toString().equals(spinnerText[2])){
             startActivity(new Intent(getApplicationContext(), NumericActivity.class));
         } else {
             startActivity(new Intent(getApplicationContext(), RootChart.class));
