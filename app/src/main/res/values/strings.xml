@@ -33,6 +33,7 @@
     <string name="text_animateChart">Animate Chart</string>
     <string name="text_labelPoint">Enter Total Point</string>
     <string name="text_Area">Area:</string>
+    <string name="text_subtendedArea">Subtended area</string>
 
     <string name="license"><![CDATA[
       <h1> Grafici Java </h1>

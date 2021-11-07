@@ -4,6 +4,7 @@ import static it.edu.graficicalcolo.SettingsActivity.ANIMATE;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -56,7 +57,7 @@ public class AreaActivity extends AppCompatActivity {
             CombinedData data = new CombinedData();
             data.setData(lineData);
             data.setData(scatterData);
-            combinedChart.getDescription().setText("Subtended area");
+            combinedChart.getDescription().setText(getResources().getString(R.string.text_subtendedArea));
             combinedChart.setData(data);
             combinedChart.invalidate();
             textViewAreaOut.setText(String.valueOf(area));
@@ -66,7 +67,7 @@ public class AreaActivity extends AppCompatActivity {
             }
 
         } catch (Exception e) {
-            textViewAreaOut.setText("Error Try Again");
+            Log.e("AreaActivity","Exception trying to set up chart");
             e.printStackTrace();
         }
     }

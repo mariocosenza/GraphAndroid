@@ -3,6 +3,7 @@ package it.edu.graficicalcolo;
 import static it.edu.graficicalcolo.CalcoloApprossimato.PI_AVG;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -53,6 +54,7 @@ public class ChartActivity extends AppCompatActivity {
             scatterChart.setData(scatterData);
             scatterChart.getDescription().setText(getResources().getString(R.string.text_randomPoint));
         } catch (Exception e) {
+            Log.e("ChartActivity","Exception trying to set up chart");
             e.printStackTrace();
         }
 

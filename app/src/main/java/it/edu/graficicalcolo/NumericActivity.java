@@ -34,6 +34,7 @@ public class NumericActivity extends AppCompatActivity {
     private LineDataSet lineDataSetX;
     private LineDataSet lineDataSetY;
     private LineData lineData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +47,11 @@ public class NumericActivity extends AppCompatActivity {
         lineChartNumeric = findViewById(R.id.lineChartNumeric);
         setChart();
     }
+
     public float getNumeberA(){
         return Float.parseFloat(editTextNumberDecimalA.getText().toString());
     }
+
     public float getNumeberB(){
         return Float.parseFloat(editTextNumberDecimalB.getText().toString());
     }
@@ -68,6 +71,7 @@ public class NumericActivity extends AppCompatActivity {
               selectedSecant();
         }
     }
+
     public void createXline(){
         ArrayList<Entry> lineX = new ArrayList<>();
         lineX.add(new Entry(-4,0));
@@ -77,6 +81,7 @@ public class NumericActivity extends AppCompatActivity {
         lineDataSetX.setLineWidth(1);
         lineDataSetX.setDrawCircles(false);
     }
+
     public void createYline(){
         ArrayList<Entry> lineY = new ArrayList<>();
         lineY.add(new Entry(0,-60));
@@ -86,6 +91,7 @@ public class NumericActivity extends AppCompatActivity {
         lineDataSetY.setLineWidth(1);
         lineDataSetY.setDrawCircles(false);
     }
+
     public void setChart(){
         for (float i = -4; i<=5; i += 0.001)
         {
@@ -104,6 +110,7 @@ public class NumericActivity extends AppCompatActivity {
         lineChartNumeric.animateY(10000);
         }
     }
+
     public void setSquare(){
         createXline();
         createYline();
@@ -125,29 +132,29 @@ public class NumericActivity extends AppCompatActivity {
         lineDataSetAB.setLineWidth(1);
         lineDataSetAB.setColor(Color.RED);
         lineChartNumeric.invalidate();
-
     }
 
     public void selectedBisection()
     {
-
         NumericCalc calcBisection = new NumericCalc();
         textViewOutRoot.setText(String.valueOf(calcBisection.bisection(getNumeberA(),getNumeberB(), EPS)));
         setSquare();
-
     }
+
     public void selectedSecant()
     {
         NumericCalc calcBisection = new NumericCalc();
         textViewOutRoot.setText(String.valueOf(calcBisection.secant(getNumeberA(),getNumeberB(), EPS)));
         setSquare();
     }
+
     public void selectedTangent()
     {
         NumericCalc calcBisection = new NumericCalc();
         textViewOutRoot.setText(String.valueOf(calcBisection.tangent(getNumeberA(),getNumeberB(), EPS)));
         setSquare();
     }
+
     public void selectedRope()
     {
         NumericCalc calcBisection = new NumericCalc();
