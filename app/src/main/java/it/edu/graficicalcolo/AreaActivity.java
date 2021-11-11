@@ -45,7 +45,9 @@ public class AreaActivity extends AppCompatActivity {
         try {
             AreaFunction areaFunction = new AreaFunction();
             areaFunction.TOTAL_POINT = Integer.parseInt(String.valueOf(editTextNumberTotalPoint.getText()));
-            float area = areaFunction.areaCalc(Float.parseFloat(String.valueOf(editA.getText())), Float.parseFloat(String.valueOf(editB.getText())));
+            float a = Float.parseFloat(String.valueOf(editA.getText()));
+            float b = Float.parseFloat(String.valueOf(editB.getText()));
+            float area = a>b?  areaFunction.areaCalc(b, a) : areaFunction.areaCalc(a, b);
             LineDataSet lineDataSet = new LineDataSet(areaFunction.getLineEntries(), "Function");
             LineData lineData = new LineData(lineDataSet);
             ScatterDataSet scatterDataSet = new ScatterDataSet(areaFunction.getScatterEntries(), "Point");
