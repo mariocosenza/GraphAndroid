@@ -11,7 +11,6 @@
         android:layout_width="123dp"
         android:layout_height="55dp"
         android:layout_gravity="center"
-        android:layout_marginTop="14dp"
         android:layout_marginBottom="24dp"
         android:onClick="sendValueCalc"
         android:text="@string/app_calc"
@@ -19,160 +18,148 @@
         app:cornerRadius="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3"
-        app:layout_constraintVertical_bias="0.555">
+        app:layout_constraintStart_toStartOf="parent">
 
     </Button>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalcArea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/combined_chart">
+
+        <EditText
+            android:id="@+id/editA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="false"
+            android:digits="0123456789.-"
+            android:ems="10"
+            android:hint="@string/text_labelA"
+            android:inputType="numberSigned"
+            android:minHeight="48dp"
+            android:textColorHint="#555555"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAreaOut"
+            tools:layout_conversion_absoluteHeight="45dp"
+            tools:layout_conversion_absoluteWidth="210dp" />
+
+        <EditText
+            android:id="@+id/editB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="false"
+            android:digits="0123456789.-"
+            android:ems="10"
+            android:hint="@string/text_labelB"
+            android:inputType="numberSigned"
+            android:minHeight="48dp"
+            android:textColorHint="#555555"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editA"
+            tools:layout_conversion_absoluteHeight="45dp"
+            tools:layout_conversion_absoluteWidth="210dp" />
+
+        <TextView
+            android:id="@+id/textViewArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/text_Area"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextNumberTotalPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:autofillHints="false"
+            android:ems="10"
+            android:hint="@string/text_labelPoint"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            android:textColorHint="#555555"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editB" />
+
+        <TextView
+            android:id="@+id/textViewA_Area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="86dp"
+            android:text="@string/text_ANumeric"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/editA"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewArea" />
+
+        <TextView
+            android:id="@+id/textViewB_Area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="87dp"
+            android:text="@string/text_BNumeric"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/editB"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewA_Area" />
+
+        <TextView
+            android:id="@+id/textViewTotalPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="55dp"
+            android:text="@string/text_help_points"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/editTextNumberTotalPoint"
+            app:layout_constraintHorizontal_bias="0.225"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewB_Area" />
+
+        <TextView
+            android:id="@+id/textViewAreaOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="104dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.github.mikephil.charting.charts.CombinedChart
         android:id="@+id/combined_chart"
-        android:layout_width="367dp"
-        android:layout_height="400dp"
+        android:layout_width="365dp"
+        android:layout_height="386dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="22dp"
-        android:layout_marginBottom="21dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </com.github.mikephil.charting.charts.CombinedChart>
-
-    <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="396dp"
-        android:layout_height="219dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCalcArea"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/combined_chart">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <EditText
-                android:id="@+id/editA"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:autofillHints="false"
-                android:ems="10"
-                android:hint="@string/text_labelA"
-                android:inputType="numberDecimal"
-                android:minHeight="48dp"
-                android:textColorHint="#555555"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewAreaOut"
-                tools:layout_conversion_absoluteHeight="45dp"
-                tools:layout_conversion_absoluteWidth="210dp" />
-
-            <EditText
-                android:id="@+id/editB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="16dp"
-                android:autofillHints="false"
-                android:ems="10"
-                android:hint="@string/text_labelB"
-                android:inputType="numberDecimal"
-                android:minHeight="48dp"
-                android:textColorHint="#555555"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editA"
-                tools:layout_conversion_absoluteHeight="45dp"
-                tools:layout_conversion_absoluteWidth="210dp" />
-
-            <TextView
-                android:id="@+id/textViewArea"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="52dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/text_Area"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/editTextNumberTotalPoint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="16dp"
-                android:autofillHints="false"
-                android:ems="10"
-                android:hint="@string/text_labelPoint"
-                android:inputType="numberDecimal"
-                android:minHeight="48dp"
-                android:textColorHint="#555555"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editB" />
-
-            <TextView
-                android:id="@+id/textViewA_Area"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="86dp"
-                android:text="@string/text_ANumeric"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toStartOf="@+id/editA"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewArea" />
-
-            <TextView
-                android:id="@+id/textViewB_Area"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="68dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="87dp"
-                android:text="@string/text_BNumeric"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toStartOf="@+id/editB"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewA_Area" />
-
-            <TextView
-                android:id="@+id/textViewTotalPoint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="36dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="55dp"
-                android:text="@string/text_help_points"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toStartOf="@+id/editTextNumberTotalPoint"
-                app:layout_constraintHorizontal_bias="0.225"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewB_Area" />
-
-            <TextView
-                android:id="@+id/textViewAreaOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="104dp"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

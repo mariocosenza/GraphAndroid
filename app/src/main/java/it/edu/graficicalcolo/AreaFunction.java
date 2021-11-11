@@ -9,6 +9,10 @@ public class AreaFunction {
     public float yMax;
     public float internalPoint = 0;
     public int TOTAL_POINT = 10000;
+    private final float DEFAULT_XMIN = -2;
+    private final float DEFAULT_XMAX= 3;
+    private float xMin = DEFAULT_XMIN;
+    private float xMax = DEFAULT_XMAX;
     private final ArrayList<Entry> scatterEntries = new ArrayList<>();
     private final ArrayList<Entry> lineEntries = new ArrayList<>();
 
@@ -23,15 +27,16 @@ public class AreaFunction {
         return ((-x*x*x)+5*x);
     }
 
-    public void drawFunction(){
-        for (float i = -2; i < 3; i += 0.1)
+
+    public void drawFunction(float xMin, float xMax){
+        for (float i = xMin; i < xMax; i += 0.1)
         {
             lineEntries.add(new Entry(i, myFunction(i)));
         }
     }
 
     public float findMax(float a, float b){
-         yMax = myFunction(a);
+        yMax = myFunction(a);
         for (float i=a; i<b; i += 0.1){
 
             if (myFunction(i)>yMax){
@@ -66,8 +71,21 @@ public class AreaFunction {
     }
 
     public float areaCalc (float a, float b) {
+        if (a<DEFAULT_XMIN) {
+            xMin = a - 1;
+            xMax = DEFAULT_XMAX;
+        }
+        if (b>DEFAULT_XMAX) {
+            xMax = b + 1;
+            if ((xMin < DEFAULT_XMIN) && (a>=DEFAULT_XMIN)){
+                xMin = DEFAULT_XMIN;
+            }
+        } else {
+            xMin = DEFAULT_XMIN;
+            xMax = DEFAULT_XMAX;
+        }
         findMax(a, b);
-        drawFunction();
+        drawFunction(xMin, xMax);
         float areaSquare = (b-a) * Math.abs(findMax(a,b));
         placePoint(a,b);
         return (internalPoint/TOTAL_POINT)*areaSquare;
