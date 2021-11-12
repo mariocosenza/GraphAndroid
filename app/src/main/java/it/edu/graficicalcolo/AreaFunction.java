@@ -71,18 +71,14 @@ public class AreaFunction {
     }
 
     public float areaCalc (float a, float b) {
+        xMin = DEFAULT_XMIN;
+        xMax = DEFAULT_XMAX;
         if (a<DEFAULT_XMIN) {
-            xMin = a - 1;
-            xMax = DEFAULT_XMAX;
+            xMin = a - 0.5f;
+
         }
         if (b>DEFAULT_XMAX) {
-            xMax = b + 1;
-            if ((xMin < DEFAULT_XMIN) && (a>=DEFAULT_XMIN)){
-                xMin = DEFAULT_XMIN;
-            }
-        } else {
-            xMin = DEFAULT_XMIN;
-            xMax = DEFAULT_XMAX;
+            xMax = b + 0.5f;
         }
         findMax(a, b);
         drawFunction(xMin, xMax);
