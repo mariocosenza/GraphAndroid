@@ -76,7 +76,7 @@ public class NumericActivity extends AppCompatActivity {
         ArrayList<Entry> lineX = new ArrayList<>();
         lineX.add(new Entry(-4,0));
         lineX.add(new Entry(5,0));
-        lineDataSetX= new LineDataSet(lineX, "X");
+        lineDataSetX = new LineDataSet(lineX, "X");
         lineDataSetX.setColor(Color.GREEN);
         lineDataSetX.setLineWidth(1);
         lineDataSetX.setDrawCircles(false);
