@@ -41,9 +41,10 @@ public class AreaActivity extends AppCompatActivity {
         drawFunction();
     }
 
+    private AreaFunction areaFunction = new AreaFunction();
     public void drawFunction() {
         try {
-            AreaFunction areaFunction = new AreaFunction();
+
             areaFunction.TOTAL_POINT = Integer.parseInt(String.valueOf(editTextNumberTotalPoint.getText()));
             float a = Float.parseFloat(String.valueOf(editA.getText()));
             float b = Float.parseFloat(String.valueOf(editB.getText()));
