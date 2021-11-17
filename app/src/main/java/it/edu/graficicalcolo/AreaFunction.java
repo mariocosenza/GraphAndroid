@@ -29,6 +29,7 @@ public class AreaFunction {
 
 
     public void drawFunction(float xMin, float xMax){
+        lineEntries.clear();
         for (float i = xMin; i < xMax; i += 0.1)
         {
             lineEntries.add(new Entry(i, myFunction(i)));
@@ -58,6 +59,7 @@ public class AreaFunction {
     }
 
     public void placePoint (float a, float b) {
+        scatterEntries.clear();
         for (float i = 0; i < TOTAL_POINT; i++) {
 
             float x = randomPointX(a, b);
@@ -71,15 +73,10 @@ public class AreaFunction {
     }
 
     public float areaCalc (float a, float b) {
-        xMin = DEFAULT_XMIN;
-        xMax = DEFAULT_XMAX;
-        if (a<DEFAULT_XMIN) {
-            xMin = a - 0.5f;
 
-        }
-        if (b>DEFAULT_XMAX) {
-            xMax = b + 0.5f;
-        }
+        xMin = xMin < DEFAULT_XMIN? a - 0.5f : DEFAULT_XMIN;
+        xMax = xMax > DEFAULT_XMAX? b + 0.5f : DEFAULT_XMAX ;
+
         findMax(a, b);
         drawFunction(xMin, xMax);
         float areaSquare = (b-a) * Math.abs(findMax(a,b));
