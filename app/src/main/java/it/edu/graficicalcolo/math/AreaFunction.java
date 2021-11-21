@@ -76,8 +76,8 @@ public class AreaFunction {
 
     public float areaCalc (float a, float b, String function) {
         parser.setExpression(function);
-        xMin = xMin < DEFAULT_XMIN? DEFAULT_XMIN : a - 0.5f;
-        xMax = xMax > DEFAULT_XMAX? DEFAULT_XMAX : b + 0.5f;
+        xMin = a < DEFAULT_XMIN? a - 0.5f : DEFAULT_XMIN;
+        xMax = b > DEFAULT_XMAX? b + 0.5f : DEFAULT_XMAX;
         findMax(a, b);
         drawFunction(xMin, xMax);
         float areaSquare = (b-a) * Math.abs(findMax(a,b));
