@@ -1,4 +1,4 @@
-package it.edu.graficicalcolo;
+package it.edu.graficicalcolo.math;
 
 import com.github.mikephil.charting.data.Entry;
 
@@ -15,6 +15,8 @@ public class AreaFunction {
     private float xMax = DEFAULT_XMAX;
     private final ArrayList<Entry> scatterEntries = new ArrayList<>();
     private final ArrayList<Entry> lineEntries = new ArrayList<>();
+    private final StringToFunction parser = new StringToFunction();
+
 
     public ArrayList<Entry> getScatterEntries() {
         return scatterEntries;
@@ -24,7 +26,7 @@ public class AreaFunction {
     }
 
     public float myFunction(float x) {
-        return ((-x*x*x)+5*x);
+        return parser.expressionSolver(x);
     }
 
 
@@ -72,8 +74,9 @@ public class AreaFunction {
         }
     }
 
-    public float areaCalc (float a, float b) {
+    public float areaCalc (float a, float b, String function) {
 
+        parser.setExpression(function);
         xMin = xMin < DEFAULT_XMIN? a - 0.5f : DEFAULT_XMIN;
         xMax = xMax > DEFAULT_XMAX? b + 0.5f : DEFAULT_XMAX ;
 

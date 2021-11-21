@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RootChart"
+    android:background= "@drawable/app_background"
     >
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/lineChart"
-        android:layout_width="367dp"
-        android:layout_height="398dp"
+        android:layout_width="339dp"
+        android:layout_height="391dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="22dp"
         android:layout_marginBottom="37dp"
+        android:background="@drawable/chart_background"
         app:layout_constraintBottom_toTopOf="@+id/textViewRootValue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +74,7 @@
         android:layout_marginTop="42dp"
         android:text="@string/text_rooting"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRootValue" />
 

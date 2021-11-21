@@ -18,18 +18,23 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.ScatterData;
 import com.github.mikephil.charting.data.ScatterDataSet;
 
+import it.edu.graficicalcolo.math.AreaFunction;
+
 public class AreaActivity extends AppCompatActivity {
 
     private CombinedChart combinedChart;
     private EditText editA;
     private EditText editB;
     private EditText editTextNumberTotalPoint;
+    private EditText editFunction;
     private TextView textViewAreaOut;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_area);
+        editFunction = findViewById(R.id.editTextTextExspression);
         combinedChart = findViewById(R.id.combined_chart);
         editA = findViewById(R.id.editA);
         editB = findViewById(R.id.editB);
@@ -41,14 +46,14 @@ public class AreaActivity extends AppCompatActivity {
         drawFunction();
     }
 
-    private AreaFunction areaFunction = new AreaFunction();
+    private final AreaFunction areaFunction = new AreaFunction();
     public void drawFunction() {
         try {
 
             areaFunction.TOTAL_POINT = Integer.parseInt(String.valueOf(editTextNumberTotalPoint.getText()));
             float a = Float.parseFloat(String.valueOf(editA.getText()));
             float b = Float.parseFloat(String.valueOf(editB.getText()));
-            float area = a>b?  areaFunction.areaCalc(b, a) : areaFunction.areaCalc(a, b);
+            float area = a>b?  areaFunction.areaCalc(b, a, String.valueOf(editFunction.getText())) : areaFunction.areaCalc(a, b,String.valueOf(editFunction.getText()));
             LineDataSet lineDataSet = new LineDataSet(areaFunction.getLineEntries(), "Function");
             LineData lineData = new LineData(lineDataSet);
             ScatterDataSet scatterDataSet = new ScatterDataSet(areaFunction.getScatterEntries(), "Point");

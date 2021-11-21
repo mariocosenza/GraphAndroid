@@ -19,6 +19,8 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
 
+import it.edu.graficicalcolo.math.NumericCalc;
+
 public class NumericActivity extends AppCompatActivity {
 
     private EditText editTextNumberDecimalA;
