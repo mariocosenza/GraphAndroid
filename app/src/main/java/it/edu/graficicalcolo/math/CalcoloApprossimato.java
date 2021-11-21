@@ -1,4 +1,4 @@
-package it.edu.graficicalcolo;
+package it.edu.graficicalcolo.math;
 
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;

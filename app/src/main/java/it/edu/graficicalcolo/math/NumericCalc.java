@@ -1,4 +1,4 @@
-package it.edu.graficicalcolo;
+package it.edu.graficicalcolo.math;
 
 public class NumericCalc {
 
@@ -98,7 +98,7 @@ public class NumericCalc {
     double Ksangular(double Xnew, double Xold) {
         return (getFunction(Xnew)-getFunction(Xold))/(Xnew-Xold);
     }
-    double secant(double a, double b, double xacc) {
+    public double secant(double a, double b, double xacc) {
         int i;
         boolean end=false;
         double Fa, Fb, Xi = 0, Fi, Xnew,Xold, tmp;
@@ -138,7 +138,7 @@ public class NumericCalc {
         double DELTA = 0.001;
         return (getFunction(xi+ DELTA)-getFunction(xi))/ DELTA;}
 
-    double tangent(double a, double b, double xacc) {
+    public double tangent(double a, double b, double xacc) {
         int i;
         boolean end=false;
         double Fa, Fb, Xi = 0, Fi, Xold, tmp;

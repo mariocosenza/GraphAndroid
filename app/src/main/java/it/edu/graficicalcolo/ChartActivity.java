@@ -1,6 +1,6 @@
 package it.edu.graficicalcolo;
 
-import static it.edu.graficicalcolo.CalcoloApprossimato.PI_AVG;
+import static it.edu.graficicalcolo.math.CalcoloApprossimato.PI_AVG;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +17,8 @@ import com.github.mikephil.charting.data.ScatterDataSet;
 
 import java.text.NumberFormat;
 import java.util.Locale;
+
+import it.edu.graficicalcolo.math.CalcoloApprossimato;
 
 
 public class ChartActivity extends AppCompatActivity {

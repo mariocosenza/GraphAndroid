@@ -1,4 +1,4 @@
-package it.edu.graficicalcolo;
+package it.edu.graficicalcolo.math;
 
 public class ProbabilisticCalc {
 
