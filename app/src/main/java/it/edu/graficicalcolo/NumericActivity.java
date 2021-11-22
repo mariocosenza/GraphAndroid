@@ -103,7 +103,7 @@ public class NumericActivity extends AppCompatActivity {
         lineDataSetX.setColor(Color.GREEN);
         lineDataSetX.setLineWidth(1);
         lineDataSetX.setDrawCircles(false);
-        lineDataSet.setDrawValues(false);
+        lineDataSetX.setDrawValues(false);
     }
 
     public void createYline(){
@@ -114,6 +114,7 @@ public class NumericActivity extends AppCompatActivity {
         lineDataSetY.setColor(Color.GREEN);
         lineDataSetY.setLineWidth(1);
         lineDataSetY.setDrawCircles(false);
+        lineDataSetY.setDrawValues(false);
     }
 
     public void setChart(){
