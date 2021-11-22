@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AreaActivity"
-    android:background= "#c5d0d9"
-    >
+    tools:context=".AreaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -32,7 +30,6 @@
             android:hint="@string/text_labelA"
             android:inputType="numberSigned"
             android:minHeight="48dp"
-            android:textColorHint="#555555"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_conversion_absoluteHeight="45dp"
@@ -43,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="30dp"
             android:text="@string/text_help_points"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -79,10 +76,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="84dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="22dp"
             android:text="@string/text_BNumeric"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textViewTotalPoint"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewA_Area" />
 
@@ -98,7 +97,6 @@
             android:hint="@string/text_labelB"
             android:inputType="numberSigned"
             android:minHeight="48dp"
-            android:textColorHint="#555555"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editA"
             tools:layout_conversion_absoluteHeight="45dp"
@@ -115,7 +113,6 @@
             android:hint="@string/text_labelPoint"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
-            android:textColorHint="#555555"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editB" />
 
@@ -154,7 +151,7 @@
         android:ems="10"
         android:hint="@string/hintExpression"
         android:importantForAutofill="no"
-        android:inputType="textShortMessage|textCapCharacters"
+        android:inputType="textShortMessage"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/combined_chart" />

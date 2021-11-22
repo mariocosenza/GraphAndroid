@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class SettingsActivity extends AppCompatActivity {
-    private SwitchMaterial switchAnimate;
     public static boolean ANIMATE = false;
+    private SwitchMaterial switchAnimate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,8 @@ public class SettingsActivity extends AppCompatActivity {
         switchAnimate.setChecked(ANIMATE);
         setupHyperlink();
     }
-    public void switched(View view){
+
+    public void switched(View view) {
         ANIMATE = switchAnimate.isChecked();
 
     }
