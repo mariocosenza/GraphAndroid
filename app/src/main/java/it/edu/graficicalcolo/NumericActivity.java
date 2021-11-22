@@ -31,14 +31,12 @@ public class NumericActivity extends AppCompatActivity {
     private String[] spinnerText;
     private Spinner appSpinnerNumeric;
     private LineChart lineChartNumeric;
-    private  NumericCalc numericCalc = new NumericCalc();
+    private final NumericCalc numericCalc = new NumericCalc();
     private final ArrayList<Entry> functionEntry = new ArrayList<>();
     private final double EPS = 0.00001;
     private LineDataSet lineDataSet;
     private LineDataSet lineDataSetX;
     private LineDataSet lineDataSetY;
-    private LineData lineData;
-    private String function;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +57,7 @@ public class NumericActivity extends AppCompatActivity {
         return Float.parseFloat(editTextNumberDecimalA.getText().toString());
         }
         catch (Exception e) {
+            Log.e("NumericActivity", "getNumberA() error!");
             return -1;
         }
     }
@@ -68,38 +67,39 @@ public class NumericActivity extends AppCompatActivity {
             return Float.parseFloat(editTextNumberDecimalB.getText().toString());
         }
         catch (Exception e) {
+            Log.e("NumericActivity", "getNumberB() error!");
             return 1;
         }
     }
 
     public void selectMethod(View view) {
-        function = String.valueOf(editTextExspression.getText());
-        System.out.println(function);
-        numericCalc.setMathExpression(function);
-        findMax(getNumeberA(), getNumeberB());
-        findMin(getNumeberA(), getNumeberB());
-        setChart();
-        if (appSpinnerNumeric.getSelectedItem().toString().equals(spinnerText[0])){
-            selectedBisection();
+        try {
+            String function = String.valueOf(editTextExspression.getText());
+            System.out.println(function);
+            numericCalc.setMathExpression(function);
+            findMax(getNumeberA(), getNumeberB());
+            findMin(getNumeberA(), getNumeberB());
+            setChart();
+            if (appSpinnerNumeric.getSelectedItem().toString().equals(spinnerText[0])) {
+                selectedBisection();
+            } else if (appSpinnerNumeric.getSelectedItem().toString().equals(spinnerText[1])) {
+                selectedTangent();
+            } else if (appSpinnerNumeric.getSelectedItem().toString().equals(spinnerText[2])) {
+                selectedRope();
+            } else {
+                selectedSecant();
+            }
         }
-        else if (appSpinnerNumeric.getSelectedItem().toString().equals(spinnerText[1])){
-                 selectedTangent();
+        catch (Exception e) {
+            Log.e("NumericActivity", "selectMethod() error!");
         }
-        else if (appSpinnerNumeric.getSelectedItem().toString().equals(spinnerText[2])){
-                 selectedRope();
-        }
-
-        else {
-              selectedSecant();
-        }
-
     }
 
     public void createXline(){
-        ArrayList<Entry> lineX = new ArrayList<>();
-        lineX.add(new Entry(getNumeberA()-1,0));
-        lineX.add(new Entry(getNumeberB()+1,0));
-        lineDataSetX = new LineDataSet(lineX, "X");
+        ArrayList<Entry> lineXdraw = new ArrayList<>();
+        lineXdraw.add(new Entry(getNumeberA()-1,0));
+        lineXdraw.add(new Entry(getNumeberB()+1,0));
+        lineDataSetX = new LineDataSet(lineXdraw, "X");
         lineDataSetX.setColor(Color.GREEN);
         lineDataSetX.setLineWidth(1);
         lineDataSetX.setDrawCircles(false);

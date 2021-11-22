@@ -33,7 +33,7 @@ public class RootChart extends AppCompatActivity {
     }
 
     public void onButtonClick(View v) {
-        textViewRoot.setText(getResources().getString(R.string.text_rootValue) + ": " + new ProbabilisticCalc().sqrtAproximated(Integer.parseInt(editRooting.getText().toString())));
+        textViewRoot.setText(String.valueOf(new ProbabilisticCalc().sqrtAproximated(Integer.parseInt(editRooting.getText().toString()))));
         rootPoint();
     }
 

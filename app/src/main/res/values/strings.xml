@@ -35,6 +35,7 @@
     <string name="text_Area">Area:</string>
     <string name="text_subtendedArea">Subtended area</string>
     <string name="text_point">Point</string>
+    <string name="text_hint_root">Input rooting</string>
     <string name="hintExpression">Enter your expression</string>
 
     <string name="license"><![CDATA[
