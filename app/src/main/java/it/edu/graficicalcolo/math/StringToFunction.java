@@ -13,6 +13,9 @@ public class StringToFunction {
         }
         expression = new MathExpression(iLetter + "=0;"  + function);
     }
+    public char getIletter (){
+        return iLetter;
+    }
 
     public float expressionSolver(float i) {
         expression.setValue(String.valueOf(iLetter), String.valueOf(i));

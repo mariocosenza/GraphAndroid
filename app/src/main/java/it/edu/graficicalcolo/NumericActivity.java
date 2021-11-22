@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -30,7 +31,7 @@ public class NumericActivity extends AppCompatActivity {
     private String[] spinnerText;
     private Spinner appSpinnerNumeric;
     private LineChart lineChartNumeric;
-    private final NumericCalc numericCalc = new NumericCalc();
+    private  NumericCalc numericCalc = new NumericCalc();
     private final ArrayList<Entry> functionEntry = new ArrayList<>();
     private final double EPS = 0.00001;
     private LineDataSet lineDataSet;
@@ -53,8 +54,14 @@ public class NumericActivity extends AppCompatActivity {
         editTextExspression = findViewById(R.id.editTextTextExspressionNumeric);
     }
 
-    public float getNumeberA(){
+    public float getNumeberA() {
+        try {
         return Float.parseFloat(editTextNumberDecimalA.getText().toString());
+    }
+    catch (Exception e) {
+        return 1;
+    }
+
     }
 
     public float getNumeberB(){
@@ -63,7 +70,8 @@ public class NumericActivity extends AppCompatActivity {
 
     public void selectMethod(View view) {
         function = String.valueOf(editTextExspression.getText());
-        numericCalc.setMathExpression(String.valueOf(editTextExspression.getText()));
+        System.out.println(function);
+        numericCalc.setMathExpression(function);
         if (appSpinnerNumeric.getSelectedItem().toString().equals(spinnerText[0])){
             selectedBisection();
         }
@@ -101,7 +109,7 @@ public class NumericActivity extends AppCompatActivity {
     }
 
     public void setChart(){
-        for (float i = -4; i<=5; i += 0.1)
+        for (float i = -2; i<=4; i += 0.1)
         {
             functionEntry.add(new Entry(i, (float) numericCalc.getFunction(i)));
         }
@@ -110,6 +118,7 @@ public class NumericActivity extends AppCompatActivity {
         lineChartNumeric.invalidate();
         lineChartNumeric.setData(lineData);
         lineDataSet.setDrawCircles(false);
+        lineDataSet.setDrawValues(false);
         lineDataSet.setLineWidth(5);
         lineChartNumeric.getDescription().setText(getResources().getString(R.string.text_functionLabel));
         lineChartNumeric.getLegend().setEnabled(false);
@@ -144,34 +153,26 @@ public class NumericActivity extends AppCompatActivity {
 
     public void selectedBisection()
     {
-        NumericCalc calcBisection = new NumericCalc();
-        calcBisection.setMathExpression(function);
-        textViewOutRoot.setText(String.valueOf(calcBisection.bisection(getNumeberA(),getNumeberB(), EPS)));
-        setSquare();
+        textViewOutRoot.setText(String.valueOf(numericCalc.bisection(getNumeberA(),getNumeberB(), EPS)));
+       // setSquare();
     }
 
     public void selectedSecant()
     {
-        NumericCalc calcBisection = new NumericCalc();
-        calcBisection.setMathExpression(function);
-        textViewOutRoot.setText(String.valueOf(calcBisection.secant(getNumeberA(),getNumeberB(), EPS)));
-        setSquare();
+        textViewOutRoot.setText(String.valueOf(numericCalc.secant(getNumeberA(),getNumeberB(), EPS)));
+       // setSquare();
     }
 
     public void selectedTangent()
     {
-        NumericCalc calcBisection = new NumericCalc();
-        calcBisection.setMathExpression(function);
-        textViewOutRoot.setText(String.valueOf(calcBisection.tangent(getNumeberA(),getNumeberB(), EPS)));
-        setSquare();
+        textViewOutRoot.setText(String.valueOf(numericCalc.tangent(getNumeberA(),getNumeberB(), EPS)));
+        //setSquare();
     }
 
     public void selectedRope()
     {
-        NumericCalc calcBisection = new NumericCalc();
-        calcBisection.setMathExpression(function);
-        textViewOutRoot.setText(String.valueOf(calcBisection.rope(getNumeberA(),getNumeberB(), EPS)));
-        setSquare();
+        textViewOutRoot.setText(String.valueOf(numericCalc.rope(getNumeberA(),getNumeberB(), EPS)));
+        //setSquare();
     }
 
 }

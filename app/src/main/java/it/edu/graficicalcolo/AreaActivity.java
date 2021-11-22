@@ -54,13 +54,13 @@ public class AreaActivity extends AppCompatActivity {
             float a = Float.parseFloat(String.valueOf(editA.getText()));
             float b = Float.parseFloat(String.valueOf(editB.getText()));
             float area = a>b?  areaFunction.areaCalc(b, a, String.valueOf(editFunction.getText())) : areaFunction.areaCalc(a, b,String.valueOf(editFunction.getText()));
-            LineDataSet lineDataSet = new LineDataSet(areaFunction.getLineEntries(), "Function");
+            LineDataSet lineDataSet = new LineDataSet(areaFunction.getLineEntries(), "f(" + areaFunction.letter + ")" );
             LineData lineData = new LineData(lineDataSet);
-            ScatterDataSet scatterDataSet = new ScatterDataSet(areaFunction.getScatterEntries(), "Point");
+            ScatterDataSet scatterDataSet = new ScatterDataSet(areaFunction.getScatterEntries(), getResources().getString(R.string.text_point));
             ScatterData scatterData = new ScatterData(scatterDataSet);
             lineDataSet.setDrawCircles(false);
             scatterDataSet.setColor(Color.RED);
-            scatterDataSet.setScatterShapeSize(0.5f);
+            scatterDataSet.setScatterShapeSize(0.8f);
             lineDataSet.setLineWidth(2f);
             CombinedData data = new CombinedData();
             data.setData(lineData);

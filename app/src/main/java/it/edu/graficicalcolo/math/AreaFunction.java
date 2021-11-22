@@ -16,6 +16,7 @@ public class AreaFunction {
     private final ArrayList<Entry> scatterEntries = new ArrayList<>();
     private final ArrayList<Entry> lineEntries = new ArrayList<>();
     private final StringToFunction parser = new StringToFunction();
+    public char letter;
 
 
     public ArrayList<Entry> getScatterEntries() {
@@ -62,6 +63,7 @@ public class AreaFunction {
 
     public void placePoint (float a, float b) {
         scatterEntries.clear();
+        internalPoint = 0;
         for (float i = 0; i < TOTAL_POINT; i++) {
 
             float x = randomPointX(a, b);
@@ -82,6 +84,7 @@ public class AreaFunction {
         drawFunction(xMin, xMax);
         float areaSquare = (b-a) * Math.abs(findMax(a,b));
         placePoint(a,b);
+        letter = parser.getIletter();
         return (internalPoint/TOTAL_POINT)*areaSquare;
     }
 

@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AreaActivity"
-    android:background= "#c5d0d9"
-    >
+    tools:context=".AreaActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -154,7 +152,7 @@
         android:ems="10"
         android:hint="@string/hintExpression"
         android:importantForAutofill="no"
-        android:inputType="textShortMessage|textCapCharacters"
+        android:inputType="textShortMessage"
         android:minHeight="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/combined_chart" />

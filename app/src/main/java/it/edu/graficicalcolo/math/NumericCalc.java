@@ -1,14 +1,15 @@
 package it.edu.graficicalcolo.math;
 
 public class NumericCalc {
-private StringToFunction mathExpression;
+private StringToFunction mathExpression = new StringToFunction();
 
     public void setMathExpression(String function) {
         mathExpression.setExpression(function);
     }
 
-    public double getFunction(double z) {
+    public double getFunction(double z) { System.out.println(mathExpression.expressionSolver((float)z));
       return mathExpression.expressionSolver((float) z);
+
     }
 
     private final double JMAX = 10000;
@@ -54,7 +55,7 @@ private StringToFunction mathExpression;
             }
 
         }
-        System.out.println(Xm);
+        System.out.println(Xm +"prova");
         return Xm;
 
 

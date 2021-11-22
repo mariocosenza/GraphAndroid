@@ -8,6 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="materialBackground">#90caf9</color>
-    <color name="backgroundMain">#fffef7</color>
-    <color name="greyChart">#e3fff3</color>
+    <color name="backgroundMain">#232526</color>
+    <color name="greyChart">#6e7275</color>
 </resources>
