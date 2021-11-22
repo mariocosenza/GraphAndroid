@@ -76,6 +76,9 @@ public class NumericActivity extends AppCompatActivity {
         function = String.valueOf(editTextExspression.getText());
         System.out.println(function);
         numericCalc.setMathExpression(function);
+        findMax(getNumeberA(), getNumeberB());
+        findMin(getNumeberA(), getNumeberB());
+        setChart();
         if (appSpinnerNumeric.getSelectedItem().toString().equals(spinnerText[0])){
             selectedBisection();
         }
@@ -89,23 +92,24 @@ public class NumericActivity extends AppCompatActivity {
         else {
               selectedSecant();
         }
-        setChart();
+
     }
 
     public void createXline(){
         ArrayList<Entry> lineX = new ArrayList<>();
-        lineX.add(new Entry(-2,0));
-        lineX.add(new Entry(3,0));
+        lineX.add(new Entry(getNumeberA()-1,0));
+        lineX.add(new Entry(getNumeberB()+1,0));
         lineDataSetX = new LineDataSet(lineX, "X");
         lineDataSetX.setColor(Color.GREEN);
         lineDataSetX.setLineWidth(1);
         lineDataSetX.setDrawCircles(false);
+        lineDataSet.setDrawValues(false);
     }
 
     public void createYline(){
         ArrayList<Entry> lineY = new ArrayList<>();
-        lineY.add(new Entry(0,-10));
-        lineY.add(new Entry(0,10));
+        lineY.add(new Entry(0,(float)numericCalc.getFunction(getNumeberA()-1)));
+        lineY.add(new Entry(0, (float)numericCalc.getFunction(getNumeberB()+1)));
         lineDataSetY = new LineDataSet(lineY, "Y");
         lineDataSetY.setColor(Color.GREEN);
         lineDataSetY.setLineWidth(1);
@@ -113,14 +117,13 @@ public class NumericActivity extends AppCompatActivity {
     }
 
     public void setChart(){
-        for (float i = -2; i<=4; i += 0.1)
+        functionEntry.clear();
+        for (float i = getNumeberA()-1; i<=getNumeberB()+1; i += 0.1)
         {
             functionEntry.add(new Entry(i, (float) numericCalc.getFunction(i)));
         }
         lineDataSet = new LineDataSet(functionEntry, "Point");
-        lineData = new LineData(lineDataSet);
         lineChartNumeric.invalidate();
-        lineChartNumeric.setData(lineData);
         lineDataSet.setDrawCircles(false);
         lineDataSet.setDrawValues(false);
         lineDataSet.setLineWidth(2f);
@@ -131,18 +134,40 @@ public class NumericActivity extends AppCompatActivity {
         lineChartNumeric.animateY(10000);
         }
     }
+    private float yMax;
+    public void findMax(float a, float b){
+        yMax = (float) numericCalc.getFunction(a);
+        for (float i=a; i<b; i += 0.1){
+            if (numericCalc.getFunction(i) > yMax){
+                yMax = (float) numericCalc.getFunction(i);
+            }
+        }
+    }
+    private float yMin;
+    public void findMin(float a, float b){
+        yMin = (float) numericCalc.getFunction(a);
+        for (float i=a; i<b; i += 0.1){
+
+            if (numericCalc.getFunction(i) < yMin){
+                yMax = (float) numericCalc.getFunction(i);
+            }
+
+        }
+    }
 
     public void setSquare(){
         createXline();
         createYline();
         ArrayList<Entry> squareEntry = new ArrayList<>();
-        squareEntry.add(new Entry(getNumeberA(), -5));
-        squareEntry.add(new Entry(getNumeberA(), 5));
-        squareEntry.add(new Entry(getNumeberB(), 5));
-        squareEntry.add(new Entry(getNumeberB(), -5));
-        squareEntry.add(new Entry(getNumeberA(), -5));
+        squareEntry.add(new Entry(getNumeberA(), yMin));
+        squareEntry.add(new Entry(getNumeberA(), yMax));
+        squareEntry.add(new Entry(getNumeberB(), yMax));
+        squareEntry.add(new Entry(getNumeberB(), yMin));
+        squareEntry.add(new Entry(getNumeberA(), yMin));
         ArrayList<ILineDataSet> lines = new ArrayList<> ();
         LineDataSet lineDataSetAB = new LineDataSet(squareEntry, "AB");
+        lineDataSetAB.setDrawCircles(false);
+        lineDataSetAB.setDrawValues(false);
         lines.add(lineDataSetAB);
         lines.add(lineDataSet);
         lines.add(lineDataSetX);
@@ -158,25 +183,25 @@ public class NumericActivity extends AppCompatActivity {
     public void selectedBisection()
     {
         textViewOutRoot.setText(String.valueOf(numericCalc.bisection(getNumeberA(),getNumeberB(), EPS)));
-       // setSquare();
+        setSquare();
     }
 
     public void selectedSecant()
     {
         textViewOutRoot.setText(String.valueOf(numericCalc.secant(getNumeberA(),getNumeberB(), EPS)));
-       // setSquare();
+        setSquare();
     }
 
     public void selectedTangent()
     {
         textViewOutRoot.setText(String.valueOf(numericCalc.tangent(getNumeberA(),getNumeberB(), EPS)));
-        //setSquare();
+        setSquare();
     }
 
     public void selectedRope()
     {
         textViewOutRoot.setText(String.valueOf(numericCalc.rope(getNumeberA(),getNumeberB(), EPS)));
-        //setSquare();
+        setSquare();
     }
 
 }
