@@ -1,13 +1,11 @@
 # GraphAndroid
 [![CodeFactor](https://www.codefactor.io/repository/github/snepgaming/graphandroid/badge)](https://www.codefactor.io/repository/github/snepgaming/graphandroid) </br>
-School Project App for Android with Java
+School Project App for Android with Java </br>
+_The variable for the expression should be written in capital letter._
 
-![Main Activity](https://am3pap005files.storage.live.com/y4m9bubdTB0OslewJigypsjUWsqQm5PXbk6tjXwH5OKkaXZiy0ArI6v4cG3HNNoRiSNxOK0eHhDsrNfJxLvWYXEiCdfxa3T-8ZbjzNpUcr5T3MP753D5yia-6GdNojTad2np-b1UuiLIHnyGZCUK7YjKn9t3PKhJ6o5ayHxDLcwkauL1ofFEnXeLoYriXOvbC8Z?width=300&height=450&cropmode=none) 
+![Main Activity](https://db5pap001files.storage.live.com/y4m_m-yibvcLjTPg2ge5J6r2I46aBVkbgmah8OyfpXBIRo_VQS3K8JQ7VmPza9hRbJgTuVCpo5Md_a7XhPoYMeB4k1UhuDim-8jebeyrujIx38fLtM8jcenR6UUh0gOGuTHVxz-zxeChohDp_qM48nE9cifQzf8DvlLpVKX7Ve-gmtvGeBW1xRoSkDlF9_cnfuJ?width=300&height=450&cropmode=none) 
+![Area Activity](https://db5pap001files.storage.live.com/y4mxV5fmpzaa9uPXSuggtVZnpF4wvGxCkDVssPsAwG5G1iWsqW-fmPuCYgydNZmbo7S-9uzIEILqGyYDXS-LSSgeV1sWeXlq_TD8alQMxZXeeaDNW61k0R324V6xmGler5DwYjlNj5h98ZlMB0Oa412OvfokO3T_FULJ1L4xnYtAKf5GmF234ykVoKFhQycEKzN?width=300&height=450&cropmode=none) 
 
-![Root Activity](https://am3pap005files.storage.live.com/y4muNa6xSvm1woAgLcxDkvZsu_-Tg7rRwWcdVLjoj8pBgn_79z9iAV1Mo83XrhwYrgXFiIkh_ZkvVmPQTfXzqWF_ba7KThJuTb2lV-2y_CtqIaH04a0dGcOrzM0mVK94Y9VQdvHnULYUiIQECfpwliloiwj4SUCBhE2U6lpHCnBSmd7Fk2YM1GlSUjMNybCzPX9?width=300&height=450&cropmode=none) 
-
-![PI Activity](https://am3pap005files.storage.live.com/y4md2-uYucl0shRbh3oiG2npnNqLkt-8XFBVJEU0M0pyFLqLXknCuWcTd6np2E9XXZz622tAgSn9UrVwnsR2tRuFhI3SpwEz4BKniDOtXEZoExUxLwkzo9XJKosoIdSd4LGo-yYD1QJqCl_8YA8K3YytYcIfdQVtliGxBtQAW1CSMRQ0fCZup_dPIF6ikxu63-A?width=300&height=450&cropmode=none) 
-
-![Settings Activity](https://am3pap005files.storage.live.com/y4mRIyxqHFIqGI4mSAEw5hLP_SX3rCge8EoVEda_IhLQEqk8Drz7chwIkxor9vVNnJjIs1eE371hpDZZVo5p0bu1p3h6lN0tZXPkcQUnozusngXj4sxrnkvJoSdXulgpvLhRAMt5TxHKbbruuROF4oQK8spxUS1YzQPCfu2eO2hB-_iV2CtOBCaVI9mNpwdcOeh?width=300&height=450&cropmode=none) 
+![Numeric Activity Dark](https://db5pap001files.storage.live.com/y4mKvMyYTMUDbw9VQiiajp3vICtXY3dRlR4UJfh3iEC6bQHsV60thEvP2qP3-_oRZiZ648Z3iEjKfd5qPSBat_3b9XKn88NfToYHNQSIlEPkbNEcGn3ZiOmNcDO091xwtCSPx96hHsEM43GiAblzuLu_ExDaUc0ZN3Aisukp0mpx0X3SVKFllokYi5oVoPCrtkZ?width=300&height=450&cropmode=none) ![Numeric Activity](https://db5pap001files.storage.live.com/y4mOAguaDucfNY6uB6G6XT-GRgIrhbDGQJT7BYIeSAeLMtxKBOXW__6S1o7jMfVDHeXk4QV3ED3FV0EIRRBpmXd0QV3OXDeHMeiM9ugUDwPc7N5w2zCkGw8QSwhG8kY7UD4K7MjAYX7GbGtk1V89sKie1VLJ_XIO6I9RARX5XtpmZw2dq3-Cl9l4bWh7zvE9g48?width=300&height=450&cropmode=none) ![Settings Activity](https://db5pap001files.storage.live.com/y4mL_p-5FjTFZWiw81jAviYD9d2kMYzO5nWrK9x3Zlylf1NqX-ZMMuWXjigl-6desnonyr-sytXQ6rTY3Nc2gby09NThZoRHqz3IRhYSCxrU_E_IxPg2PXBGt_u7EEhCOgSoLrbUlX_iNaeEzwQ_Sbphux1Lf19v_g7oel0YSMDoy56D6cpN70IczO1xjixjhHu?width=300&height=450&cropmode=none) 
 
 
