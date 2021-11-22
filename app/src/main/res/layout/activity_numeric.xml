@@ -32,7 +32,7 @@
         android:ems="10"
         android:hint="@string/hintExpression"
         android:importantForAutofill="no"
-        android:inputType="textShortMessage|textCapCharacters"
+        android:inputType="textShortMessage"
         android:minHeight="48dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +101,7 @@
         android:autofillHints="no"
         android:ems="10"
         android:hint="@string/text_labelA"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_spinnerNumeric" />
@@ -115,7 +115,7 @@
         android:autofillHints="no"
         android:ems="10"
         android:hint="@string/text_labelB"
-        android:inputType="numberDecimal"
+        android:inputType="numberSigned"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimalA" />

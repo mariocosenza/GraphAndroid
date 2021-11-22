@@ -59,7 +59,9 @@ public class AreaActivity extends AppCompatActivity {
             ScatterDataSet scatterDataSet = new ScatterDataSet(areaFunction.getScatterEntries(), getResources().getString(R.string.text_point));
             ScatterData scatterData = new ScatterData(scatterDataSet);
             lineDataSet.setDrawCircles(false);
+            lineDataSet.setDrawValues(false);
             scatterDataSet.setColor(Color.RED);
+            scatterDataSet.setDrawValues(false);
             scatterDataSet.setScatterShapeSize(0.8f);
             lineDataSet.setLineWidth(2f);
             CombinedData data = new CombinedData();

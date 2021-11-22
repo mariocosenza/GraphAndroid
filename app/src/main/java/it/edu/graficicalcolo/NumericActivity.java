@@ -57,15 +57,19 @@ public class NumericActivity extends AppCompatActivity {
     public float getNumeberA() {
         try {
         return Float.parseFloat(editTextNumberDecimalA.getText().toString());
-    }
-    catch (Exception e) {
-        return 1;
-    }
-
+        }
+        catch (Exception e) {
+            return -1;
+        }
     }
 
     public float getNumeberB(){
-        return Float.parseFloat(editTextNumberDecimalB.getText().toString());
+        try {
+            return Float.parseFloat(editTextNumberDecimalB.getText().toString());
+        }
+        catch (Exception e) {
+            return 1;
+        }
     }
 
     public void selectMethod(View view) {
@@ -90,8 +94,8 @@ public class NumericActivity extends AppCompatActivity {
 
     public void createXline(){
         ArrayList<Entry> lineX = new ArrayList<>();
-        lineX.add(new Entry(-4,0));
-        lineX.add(new Entry(5,0));
+        lineX.add(new Entry(-2,0));
+        lineX.add(new Entry(3,0));
         lineDataSetX = new LineDataSet(lineX, "X");
         lineDataSetX.setColor(Color.GREEN);
         lineDataSetX.setLineWidth(1);
@@ -100,8 +104,8 @@ public class NumericActivity extends AppCompatActivity {
 
     public void createYline(){
         ArrayList<Entry> lineY = new ArrayList<>();
-        lineY.add(new Entry(0,-60));
-        lineY.add(new Entry(0,60));
+        lineY.add(new Entry(0,-10));
+        lineY.add(new Entry(0,10));
         lineDataSetY = new LineDataSet(lineY, "Y");
         lineDataSetY.setColor(Color.GREEN);
         lineDataSetY.setLineWidth(1);
@@ -119,7 +123,7 @@ public class NumericActivity extends AppCompatActivity {
         lineChartNumeric.setData(lineData);
         lineDataSet.setDrawCircles(false);
         lineDataSet.setDrawValues(false);
-        lineDataSet.setLineWidth(5);
+        lineDataSet.setLineWidth(2f);
         lineChartNumeric.getDescription().setText(getResources().getString(R.string.text_functionLabel));
         lineChartNumeric.getLegend().setEnabled(false);
         if (ANIMATE) {
