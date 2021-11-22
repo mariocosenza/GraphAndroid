@@ -29,7 +29,6 @@ public class RootChart extends AppCompatActivity {
         editRooting = findViewById(R.id.editTextRooting);
         textViewRoot = findViewById(R.id.textViewRootValue);
         lineChart = findViewById(R.id.lineChart);
-
     }
 
     public void onButtonClick(View v) {
@@ -46,6 +45,7 @@ public class RootChart extends AppCompatActivity {
         LineData lineData = new LineData(lineDataSet);
         lineChart.setData(lineData);
         lineDataSet.setDrawCircles(false);
+        lineDataSet.setDrawValues(false);
         lineDataSet.setLineWidth(5);
         lineChart.getDescription().setText(getResources().getString(R.string.text_rootValue));
 
