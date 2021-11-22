@@ -68,13 +68,6 @@ public class NumericActivity extends AppCompatActivity {
             Log.e("NumericActivity", "getNumberA() error!");
         }
     }
-    public float getNumeberA() {
-       return a;
-    }
-
-    public float getNumeberB(){
-        return b;
-    }
 
     public void selectMethod(View view) {
         try {
@@ -82,8 +75,8 @@ public class NumericActivity extends AppCompatActivity {
             String function = String.valueOf(editTextExspression.getText());
             System.out.println(function);
             numericCalc.setMathExpression(function);
-            findMax(getNumeberA(), getNumeberB());
-            findMin(getNumeberA(), getNumeberB());
+            findMax(a,b);
+            findMin(a, b);
             setChart();
             if (appSpinnerNumeric.getSelectedItem().toString().equals(spinnerText[0])) {
                 selectedBisection();
@@ -102,8 +95,8 @@ public class NumericActivity extends AppCompatActivity {
 
     public void createXline(){
         ArrayList<Entry> lineXdraw = new ArrayList<>();
-        lineXdraw.add(new Entry(getNumeberA()-1,0));
-        lineXdraw.add(new Entry(getNumeberB()+1,0));
+        lineXdraw.add(new Entry(a-1,0));
+        lineXdraw.add(new Entry(b+1,0));
         lineDataSetX = new LineDataSet(lineXdraw, "X");
         lineDataSetX.setColor(Color.GREEN);
         lineDataSetX.setLineWidth(1);
@@ -113,8 +106,8 @@ public class NumericActivity extends AppCompatActivity {
 
     public void createYline(){
         ArrayList<Entry> lineY = new ArrayList<>();
-        lineY.add(new Entry(0,(float)numericCalc.getFunction(getNumeberA()-1)));
-        lineY.add(new Entry(0, (float)numericCalc.getFunction(getNumeberB()+1)));
+        lineY.add(new Entry(0,(float)numericCalc.getFunction(a-1)));
+        lineY.add(new Entry(0, (float)numericCalc.getFunction(b+1)));
         lineDataSetY = new LineDataSet(lineY, "Y");
         lineDataSetY.setColor(Color.GREEN);
         lineDataSetY.setLineWidth(1);
@@ -124,7 +117,7 @@ public class NumericActivity extends AppCompatActivity {
 
     public void setChart(){
         functionEntry.clear();
-        for (float i = getNumeberA()-1; i<=getNumeberB()+1; i += 0.1)
+        for (float i = a-1; i <= b+1; i += 0.1)
         {
             functionEntry.add(new Entry(i, (float) numericCalc.getFunction(i)));
         }
@@ -165,11 +158,11 @@ public class NumericActivity extends AppCompatActivity {
         createXline();
         createYline();
         ArrayList<Entry> squareEntry = new ArrayList<>();
-        squareEntry.add(new Entry(getNumeberA(), yMin));
-        squareEntry.add(new Entry(getNumeberA(), yMax));
-        squareEntry.add(new Entry(getNumeberB(), yMax));
-        squareEntry.add(new Entry(getNumeberB(), yMin));
-        squareEntry.add(new Entry(getNumeberA(), yMin));
+        squareEntry.add(new Entry(a, yMin));
+        squareEntry.add(new Entry(a, yMax));
+        squareEntry.add(new Entry(b, yMax));
+        squareEntry.add(new Entry(b, yMin));
+        squareEntry.add(new Entry(a, yMin));
         ArrayList<ILineDataSet> lines = new ArrayList<> ();
         LineDataSet lineDataSetAB = new LineDataSet(squareEntry, "AB");
         lineDataSetAB.setDrawCircles(false);
@@ -188,25 +181,25 @@ public class NumericActivity extends AppCompatActivity {
 
     public void selectedBisection()
     {
-        textViewOutRoot.setText(String.valueOf(numericCalc.bisection(getNumeberA(),getNumeberB(), EPS)));
+        textViewOutRoot.setText(String.valueOf(numericCalc.bisection(a, b, EPS)));
         setSquare();
     }
 
     public void selectedSecant()
     {
-        textViewOutRoot.setText(String.valueOf(numericCalc.secant(getNumeberA(),getNumeberB(), EPS)));
+        textViewOutRoot.setText(String.valueOf(numericCalc.secant(a, b, EPS)));
         setSquare();
     }
 
     public void selectedTangent()
     {
-        textViewOutRoot.setText(String.valueOf(numericCalc.tangent(getNumeberA(),getNumeberB(), EPS)));
+        textViewOutRoot.setText(String.valueOf(numericCalc.tangent(a, b, EPS)));
         setSquare();
     }
 
     public void selectedRope()
     {
-        textViewOutRoot.setText(String.valueOf(numericCalc.rope(getNumeberA(),getNumeberB(), EPS)));
+        textViewOutRoot.setText(String.valueOf(numericCalc.rope(a, b, EPS)));
         setSquare();
     }
 
