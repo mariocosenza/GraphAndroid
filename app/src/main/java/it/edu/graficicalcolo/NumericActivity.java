@@ -37,6 +37,7 @@ public class NumericActivity extends AppCompatActivity {
     private LineDataSet lineDataSet;
     private LineDataSet lineDataSetX;
     private LineDataSet lineDataSetY;
+    private float a, b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,28 +53,32 @@ public class NumericActivity extends AppCompatActivity {
         editTextExspression = findViewById(R.id.editTextTextExspressionNumeric);
     }
 
-    public float getNumeberA() {
+    public void getNumeber() {
         try {
-        return Float.parseFloat(editTextNumberDecimalA.getText().toString());
+        a = Float.parseFloat(editTextNumberDecimalA.getText().toString());
+        b = Float.parseFloat(editTextNumberDecimalB.getText().toString());
+        float tmp;
+        if (a > b) {
+            tmp = a;
+            a = b;
+            b = tmp;
+        }
         }
         catch (Exception e) {
             Log.e("NumericActivity", "getNumberA() error!");
-            return -1;
         }
+    }
+    public float getNumeberA() {
+       return a;
     }
 
     public float getNumeberB(){
-        try {
-            return Float.parseFloat(editTextNumberDecimalB.getText().toString());
-        }
-        catch (Exception e) {
-            Log.e("NumericActivity", "getNumberB() error!");
-            return 1;
-        }
+        return b;
     }
 
     public void selectMethod(View view) {
         try {
+            getNumeber();
             String function = String.valueOf(editTextExspression.getText());
             System.out.println(function);
             numericCalc.setMathExpression(function);
