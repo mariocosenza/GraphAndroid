@@ -1,10 +1,14 @@
 package it.edu.graficicalcolo.math;
 
 public class NumericCalc {
+private StringToFunction mathExpression;
+
+    public void setMathExpression(String function) {
+        mathExpression.setExpression(function);
+    }
 
     public double getFunction(double z) {
-       return Math.pow(z,3)-2*Math.pow(z,2)-z+2;
-
+      return mathExpression.expressionSolver((float) z);
     }
 
     private final double JMAX = 10000;

@@ -25,6 +25,7 @@ public class NumericActivity extends AppCompatActivity {
 
     private EditText editTextNumberDecimalA;
     private EditText editTextNumberDecimalB;
+    private EditText editTextExspression;
     private TextView textViewOutRoot;
     private String[] spinnerText;
     private Spinner appSpinnerNumeric;
@@ -36,9 +37,11 @@ public class NumericActivity extends AppCompatActivity {
     private LineDataSet lineDataSetX;
     private LineDataSet lineDataSetY;
     private LineData lineData;
+    private String function;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numeric);
         editTextNumberDecimalA = findViewById(R.id.editTextNumberDecimalA);
@@ -47,7 +50,7 @@ public class NumericActivity extends AppCompatActivity {
         textViewOutRoot = findViewById(R.id.textViewOutRoot);
         spinnerText = getResources().getStringArray(R.array.numeric_array);
         lineChartNumeric = findViewById(R.id.lineChartNumeric);
-        setChart();
+        editTextExspression = findViewById(R.id.editTextTextExspressionNumeric);
     }
 
     public float getNumeberA(){
@@ -59,6 +62,8 @@ public class NumericActivity extends AppCompatActivity {
     }
 
     public void selectMethod(View view) {
+        function = String.valueOf(editTextExspression.getText());
+        numericCalc.setMathExpression(String.valueOf(editTextExspression.getText()));
         if (appSpinnerNumeric.getSelectedItem().toString().equals(spinnerText[0])){
             selectedBisection();
         }
@@ -72,6 +77,7 @@ public class NumericActivity extends AppCompatActivity {
         else {
               selectedSecant();
         }
+        setChart();
     }
 
     public void createXline(){
@@ -95,7 +101,7 @@ public class NumericActivity extends AppCompatActivity {
     }
 
     public void setChart(){
-        for (float i = -4; i<=5; i += 0.001)
+        for (float i = -4; i<=5; i += 0.1)
         {
             functionEntry.add(new Entry(i, (float) numericCalc.getFunction(i)));
         }
@@ -139,6 +145,7 @@ public class NumericActivity extends AppCompatActivity {
     public void selectedBisection()
     {
         NumericCalc calcBisection = new NumericCalc();
+        calcBisection.setMathExpression(function);
         textViewOutRoot.setText(String.valueOf(calcBisection.bisection(getNumeberA(),getNumeberB(), EPS)));
         setSquare();
     }
@@ -146,6 +153,7 @@ public class NumericActivity extends AppCompatActivity {
     public void selectedSecant()
     {
         NumericCalc calcBisection = new NumericCalc();
+        calcBisection.setMathExpression(function);
         textViewOutRoot.setText(String.valueOf(calcBisection.secant(getNumeberA(),getNumeberB(), EPS)));
         setSquare();
     }
@@ -153,6 +161,7 @@ public class NumericActivity extends AppCompatActivity {
     public void selectedTangent()
     {
         NumericCalc calcBisection = new NumericCalc();
+        calcBisection.setMathExpression(function);
         textViewOutRoot.setText(String.valueOf(calcBisection.tangent(getNumeberA(),getNumeberB(), EPS)));
         setSquare();
     }
@@ -160,6 +169,7 @@ public class NumericActivity extends AppCompatActivity {
     public void selectedRope()
     {
         NumericCalc calcBisection = new NumericCalc();
+        calcBisection.setMathExpression(function);
         textViewOutRoot.setText(String.valueOf(calcBisection.rope(getNumeberA(),getNumeberB(), EPS)));
         setSquare();
     }
