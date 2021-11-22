@@ -6,22 +6,24 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class AreaFunction {
-    public float yMax;
-    public float internalPoint = 0;
-    public int TOTAL_POINT = 10000;
     private final float DEFAULT_XMIN = -2;
-    private final float DEFAULT_XMAX= 3;
-    private float xMin = DEFAULT_XMIN;
-    private float xMax = DEFAULT_XMAX;
+    private final float DEFAULT_XMAX = 3;
     private final ArrayList<Entry> scatterEntries = new ArrayList<>();
     private final ArrayList<Entry> lineEntries = new ArrayList<>();
     private final StringToFunction parser = new StringToFunction();
+    private final Random randomX = new Random();
+    private final Random randomY = new Random();
+    public float yMax;
+    public float internalPoint = 0;
+    public int TOTAL_POINT = 10000;
     public char letter;
-
+    private float xMin = DEFAULT_XMIN;
+    private float xMax = DEFAULT_XMAX;
 
     public ArrayList<Entry> getScatterEntries() {
         return scatterEntries;
     }
+
     public ArrayList<Entry> getLineEntries() {
         return lineEntries;
     }
@@ -30,20 +32,18 @@ public class AreaFunction {
         return parser.expressionSolver(x);
     }
 
-
-    public void drawFunction(float xMin, float xMax){
+    public void drawFunction(float xMin, float xMax) {
         lineEntries.clear();
-        for (float i = xMin; i < xMax; i += 0.1)
-        {
+        for (float i = xMin; i < xMax; i += 0.1) {
             lineEntries.add(new Entry(i, myFunction(i)));
         }
     }
 
-    public float findMax(float a, float b){
+    public float findMax(float a, float b) {
         yMax = myFunction(a);
-        for (float i=a; i<b; i += 0.1){
+        for (float i = a; i < b; i += 0.1) {
 
-            if (myFunction(i)>yMax){
+            if (myFunction(i) > yMax) {
                 yMax = myFunction(i);
             }
 
@@ -51,17 +51,15 @@ public class AreaFunction {
         return yMax;
     }
 
-    private final Random randomX = new Random();
-    public float randomPointX (float a, float b){
-        return a+ randomX.nextFloat()*(b-a);
+    public float randomPointX(float a, float b) {
+        return a + randomX.nextFloat() * (b - a);
     }
 
-    private final Random randomY = new Random();
-    public float randomPointY (){
-        return randomY.nextFloat()*(yMax);
+    public float randomPointY() {
+        return randomY.nextFloat() * (yMax);
     }
 
-    public void placePoint (float a, float b) {
+    public void placePoint(float a, float b) {
         scatterEntries.clear();
         internalPoint = 0;
         for (float i = 0; i < TOTAL_POINT; i++) {
@@ -76,19 +74,17 @@ public class AreaFunction {
         }
     }
 
-    public float areaCalc (float a, float b, String function) {
+    public float areaCalc(float a, float b, String function) {
         parser.setExpression(function);
-        xMin = a < DEFAULT_XMIN? a - 0.5f : DEFAULT_XMIN;
-        xMax = b > DEFAULT_XMAX? b + 0.5f : DEFAULT_XMAX;
+        xMin = a < DEFAULT_XMIN ? a - 0.5f : DEFAULT_XMIN;
+        xMax = b > DEFAULT_XMAX ? b + 0.5f : DEFAULT_XMAX;
         findMax(a, b);
         drawFunction(xMin, xMax);
-        float areaSquare = (b-a) * Math.abs(findMax(a,b));
-        placePoint(a,b);
+        float areaSquare = (b - a) * Math.abs(findMax(a, b));
+        placePoint(a, b);
         letter = parser.getIletter();
-        return (internalPoint/TOTAL_POINT)*areaSquare;
+        return (internalPoint / TOTAL_POINT) * areaSquare;
     }
-
-
 
 
 }

@@ -22,13 +22,13 @@ import it.edu.graficicalcolo.math.AreaFunction;
 
 public class AreaActivity extends AppCompatActivity {
 
+    private final AreaFunction areaFunction = new AreaFunction();
     private CombinedChart combinedChart;
     private EditText editA;
     private EditText editB;
     private EditText editTextNumberTotalPoint;
     private EditText editFunction;
     private TextView textViewAreaOut;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +46,13 @@ public class AreaActivity extends AppCompatActivity {
         drawFunction();
     }
 
-    private final AreaFunction areaFunction = new AreaFunction();
     public void drawFunction() {
         try {
             areaFunction.TOTAL_POINT = Integer.parseInt(String.valueOf(editTextNumberTotalPoint.getText()));
             float a = Float.parseFloat(String.valueOf(editA.getText()));
             float b = Float.parseFloat(String.valueOf(editB.getText()));
-            float area = a>b?  areaFunction.areaCalc(b, a, String.valueOf(editFunction.getText())) : areaFunction.areaCalc(a, b,String.valueOf(editFunction.getText()));
-            LineDataSet lineDataSet = new LineDataSet(areaFunction.getLineEntries(), "f(" + areaFunction.letter + ")" );
+            float area = a > b ? areaFunction.areaCalc(b, a, String.valueOf(editFunction.getText())) : areaFunction.areaCalc(a, b, String.valueOf(editFunction.getText()));
+            LineDataSet lineDataSet = new LineDataSet(areaFunction.getLineEntries(), "f(" + areaFunction.letter + ")");
             LineData lineData = new LineData(lineDataSet);
             ScatterDataSet scatterDataSet = new ScatterDataSet(areaFunction.getScatterEntries(), getResources().getString(R.string.text_point));
             ScatterData scatterData = new ScatterData(scatterDataSet);
@@ -70,13 +69,13 @@ public class AreaActivity extends AppCompatActivity {
             combinedChart.setData(data);
             combinedChart.invalidate();
             textViewAreaOut.setText(String.valueOf(area));
-            if (ANIMATE){
+            if (ANIMATE) {
                 combinedChart.animateX(10000);
                 combinedChart.animateY(10000);
             }
 
         } catch (Exception e) {
-            Log.e("AreaActivity","Exception trying to set up chart");
+            Log.e("AreaActivity", "Exception trying to set up chart");
             e.printStackTrace();
         }
     }

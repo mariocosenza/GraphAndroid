@@ -56,7 +56,7 @@ public class ChartActivity extends AppCompatActivity {
             scatterChart.setData(scatterData);
             scatterChart.getDescription().setText(getResources().getString(R.string.text_randomPoint));
         } catch (Exception e) {
-            Log.e("ChartActivity","Exception trying to set up chart");
+            Log.e("ChartActivity", "Exception trying to set up chart");
             e.printStackTrace();
         }
 
