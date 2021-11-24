@@ -1,5 +1,5 @@
 # GraphAndroid
-[![CodeFactor](https://www.codefactor.io/repository/github/snepgaming/graphandroid/badge)](https://www.codefactor.io/repository/github/snepgaming/graphandroid) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/SnepGaming/GraphAndroid?color=G) </br>
+[![CodeFactor](https://www.codefactor.io/repository/github/snepgaming/graphandroid/badge)](https://www.codefactor.io/repository/github/snepgaming/graphandroid) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/SnepGaming/GraphAndroid?color=G)](https://github.com/SnepGaming/GraphAndroid/releases/tag/v1.2.0)</br>
 School Project App for Android with Java </br>
 _The variable for the expression should be written in capital letter._
 
