@@ -4,7 +4,7 @@ import com.itis.libs.parserng.android.expressParser.MathExpression;
 
 public class StringToFunction {
 
-    private MathExpression expression;
+    private MathExpression expression, expressionDifferential;
     private char iLetter = 'x';
 
     public void setExpression(String function) {
@@ -21,6 +21,10 @@ public class StringToFunction {
     public float expressionSolver(float i) {
         expression.setValue(String.valueOf(iLetter), String.valueOf(i));
         return Float.parseFloat(expression.solve());
+    }
+    public float getDerivativeExpression(String function, float a) {
+        expressionDifferential = new MathExpression("f(x)=" + function + ";" + " diff(f,"+ a +",1)");
+        return Float.parseFloat(expressionDifferential.solve());
     }
 
 

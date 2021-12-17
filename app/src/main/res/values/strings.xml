@@ -31,6 +31,7 @@
     <string name="text_labelA">Enter A</string>
     <string name="text_labelB">Enter B</string>
     <string name="text_animateChart">Animate Chart</string>
+    <string name="text_settingD">Derivative Calculation</string>
     <string name="text_labelPoint">Enter Total Point</string>
     <string name="text_Area">Area:</string>
     <string name="text_subtendedArea">Subtended area</string>

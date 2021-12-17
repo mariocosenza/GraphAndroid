@@ -1,6 +1,7 @@
 package it.edu.graficicalcolo;
 
 import static it.edu.graficicalcolo.SettingsActivity.ANIMATE;
+import static it.edu.graficicalcolo.SettingsActivity.DERIVATE;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import java.util.ArrayList;
 
 import it.edu.graficicalcolo.math.NumericCalc;
+import it.edu.graficicalcolo.math.StringToFunction;
 
 public class NumericActivity extends AppCompatActivity {
 
@@ -37,6 +39,7 @@ public class NumericActivity extends AppCompatActivity {
     private LineDataSet lineDataSet;
     private LineDataSet lineDataSetX;
     private LineDataSet lineDataSetY;
+    private LineDataSet lineDerivate;
     private float a, b;
     private float yMax;
     private float yMin;
@@ -103,6 +106,19 @@ public class NumericActivity extends AppCompatActivity {
         lineDataSetX.setDrawCircles(false);
         lineDataSetX.setDrawValues(false);
     }
+    public void createDerive() {
+        ArrayList<Entry> functionDerivate = new ArrayList<>();
+        StringToFunction derivated = new StringToFunction();
+        for (float i = a-1; i<b+1; i += 0.1){
+            functionDerivate.add(new Entry(i, derivated.getDerivativeExpression(String.valueOf(editTextExspression.getText()), i)));
+        }
+        lineDerivate = new LineDataSet(functionDerivate, "D");
+        lineDerivate.setColor(Color.YELLOW);
+        lineDerivate.setLineWidth(2f);
+        lineDerivate.setDrawCircles(false);
+        lineDerivate.setDrawValues(false);
+    }
+
 
     public void createYline() {
         ArrayList<Entry> lineY = new ArrayList<>();
@@ -166,10 +182,14 @@ public class NumericActivity extends AppCompatActivity {
         LineDataSet lineDataSetAB = new LineDataSet(squareEntry, "AB");
         lineDataSetAB.setDrawCircles(false);
         lineDataSetAB.setDrawValues(false);
+        lines.add(lineDataSetY);
         lines.add(lineDataSetAB);
         lines.add(lineDataSet);
         lines.add(lineDataSetX);
-        lines.add(lineDataSetY);
+        if(DERIVATE) {
+            createDerive();
+            lines.add(lineDerivate);
+        }
         LineData line = new LineData(lines);
         lineChartNumeric.setData(line);
         lineDataSetAB.setDrawCircles(false);

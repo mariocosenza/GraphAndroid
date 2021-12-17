@@ -12,7 +12,9 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class SettingsActivity extends AppCompatActivity {
     public static boolean ANIMATE = false;
+    public static boolean DERIVATE = false;
     private SwitchMaterial switchAnimate;
+    private SwitchMaterial switchAnimateD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,8 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         switchAnimate = findViewById(R.id.switchAnimate);
         switchAnimate.setChecked(ANIMATE);
+        switchAnimateD = findViewById(R.id.switchAnimateD);
+        switchAnimateD.setChecked(DERIVATE);
         setupHyperlink();
     }
 
@@ -27,6 +31,11 @@ public class SettingsActivity extends AppCompatActivity {
         ANIMATE = switchAnimate.isChecked();
 
     }
+    public void switchedD(View view) {
+        DERIVATE = switchAnimateD.isChecked();
+
+    }
+
 
     private void setupHyperlink() {
         TextView licenses = findViewById(R.id.textView);

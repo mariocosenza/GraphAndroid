@@ -14,6 +14,7 @@ public class NumericCalc {
 
     }
 
+
     public double bisection(double a, double b, double xacc) {
         boolean end = false;
 
