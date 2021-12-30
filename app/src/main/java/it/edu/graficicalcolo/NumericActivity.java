@@ -51,7 +51,7 @@ public class NumericActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numeric);
         editTextNumberDecimalA = findViewById(R.id.editTextNumberDecimalA);
         editTextNumberDecimalB = findViewById(R.id.editTextNumberDecimalB);
-        appSpinnerNumeric = findViewById(R.id.app_spinnerNumeric);
+        appSpinnerNumeric = findViewById(R.id.app_spinnerArea);
         textViewOutRoot = findViewById(R.id.textViewOutRoot);
         spinnerText = getResources().getStringArray(R.array.numeric_array);
         lineChartNumeric = findViewById(R.id.lineChartNumeric);
@@ -133,7 +133,7 @@ public class NumericActivity extends AppCompatActivity {
 
     public void setChart() {
         functionEntry.clear();
-        for (float i = a - 1; i <= b + 1; i += 0.1) {
+        for (float i = a - 1; i <= b + 1; i += 0.1f) {
             functionEntry.add(new Entry(i, (float) numericCalc.getFunction(i)));
         }
         lineDataSet = new LineDataSet(functionEntry, "Point");
@@ -151,7 +151,7 @@ public class NumericActivity extends AppCompatActivity {
 
     public void findMax(float a, float b) {
         yMax = (float) numericCalc.getFunction(a);
-        for (float i = a; i < b; i += 0.1) {
+        for (float i = a; i < b; i += 0.1f) {
             if (numericCalc.getFunction(i) > yMax) {
                 yMax = (float) numericCalc.getFunction(i);
             }
@@ -160,7 +160,7 @@ public class NumericActivity extends AppCompatActivity {
 
     public void findMin(float a, float b) {
         yMin = (float) numericCalc.getFunction(a);
-        for (float i = a; i < b; i += 0.1) {
+        for (float i = a; i < b; i += 0.1f) {
 
             if (numericCalc.getFunction(i) < yMin) {
                 yMax = (float) numericCalc.getFunction(i);

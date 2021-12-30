@@ -36,7 +36,12 @@
     <string name="text_labelPoint">Inserisci Punti Totali</string>
     <string name="text_Area">Area:</string>
     <string name="text_subtendedArea">Area sottesa</string>
-
+    <string-array name="area_array">
+        <item>Rettangolo</item>
+        <item>Trapezi</item>
+        <item>Random</item>
+        <item>Simpson</item>
+    </string-array>
 
 
     <string name="license"><![CDATA[

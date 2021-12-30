@@ -22,6 +22,12 @@
         <item>Rope</item>
         <item>Secant</item>
     </string-array>
+    <string-array name="area_array">
+        <item>Rectangle</item>
+        <item>Trapezoid</item>
+        <item>Random</item>
+        <item>Simpson</item>
+    </string-array>
     <string name="text_ANumeric">A:</string>
     <string name="text_BNumeric">B:</string>
     <string name="text_settings">settings</string>
@@ -72,6 +78,7 @@
 
 
     ]]></string>
+
 
 
 </resources>

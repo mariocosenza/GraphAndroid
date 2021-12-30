@@ -6,136 +6,170 @@
     android:layout_height="match_parent"
     tools:context=".AreaActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="401dp"
-        android:layout_height="238dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ScrollView
+        android:layout_width="385dp"
+        android:layout_height="544dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="7dp"
+        android:fadeScrollbars="true"
+        android:nestedScrollingEnabled="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCalcArea"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextExpression">
 
-        <EditText
-            android:id="@+id/editA"
-            android:layout_width="193dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="33dp"
-            android:autofillHints="false"
-            android:digits="0123456789.-"
-            android:ems="10"
-            android:hint="@string/text_labelA"
-            android:inputType="numberSigned"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_conversion_absoluteHeight="45dp"
-            tools:layout_conversion_absoluteWidth="210dp" />
-
-        <TextView
-            android:id="@+id/textViewTotalPoint"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="30dp"
-            android:text="@string/text_help_points"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewB_Area" />
+            android:fadeScrollbars="true"
+            android:isScrollContainer="true"
+            android:nestedScrollingEnabled="true"
+            android:orientation="vertical"
+            android:persistentDrawingCache="scrolling"
+            android:verticalScrollbarPosition="right">
 
-        <TextView
-            android:id="@+id/textViewArea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="68dp"
-            android:layout_marginTop="12dp"
-            android:text="@string/text_Area"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="564dp"
+                android:scrollbars="vertical"
+                android:verticalScrollbarPosition="right">
 
-        <TextView
-            android:id="@+id/textViewA_Area"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/text_ANumeric"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewArea" />
+                <EditText
+                    android:id="@+id/editA"
+                    android:layout_width="193dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="52dp"
+                    android:layout_marginEnd="33dp"
+                    android:autofillHints="false"
+                    android:digits="0123456789.-"
+                    android:ems="10"
+                    android:hint="@string/text_labelA"
+                    android:inputType="numberSigned"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_conversion_absoluteHeight="45dp"
+                    tools:layout_conversion_absoluteWidth="210dp" />
 
-        <TextView
-            android:id="@+id/textViewB_Area"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="84dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="22dp"
-            android:text="@string/text_BNumeric"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/textViewTotalPoint"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewA_Area" />
+                <TextView
+                    android:id="@+id/textViewTotalPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/text_help_points"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewB_Area" />
 
-        <EditText
-            android:id="@+id/editB"
-            android:layout_width="191dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="34dp"
-            android:autofillHints="false"
-            android:digits="0123456789.-"
-            android:ems="10"
-            android:hint="@string/text_labelB"
-            android:inputType="numberSigned"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editA"
-            tools:layout_conversion_absoluteHeight="45dp"
-            tools:layout_conversion_absoluteWidth="210dp" />
+                <TextView
+                    android:id="@+id/textViewArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="68dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/text_Area"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextNumberTotalPoint"
-            android:layout_width="189dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="36dp"
-            android:autofillHints="false"
-            android:ems="10"
-            android:hint="@string/text_labelPoint"
-            android:inputType="numberDecimal"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editB" />
+                <TextView
+                    android:id="@+id/textViewA_Area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="84dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/text_ANumeric"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewArea" />
 
-        <TextView
-            android:id="@+id/textViewAreaOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="124dp"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/textViewB_Area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="84dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="22dp"
+                    android:text="@string/text_BNumeric"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewTotalPoint"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewA_Area" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <EditText
+                    android:id="@+id/editB"
+                    android:layout_width="191dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="34dp"
+                    android:autofillHints="false"
+                    android:digits="0123456789.-"
+                    android:ems="10"
+                    android:hint="@string/text_labelB"
+                    android:inputType="numberSigned"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editA"
+                    tools:layout_conversion_absoluteHeight="45dp"
+                    tools:layout_conversion_absoluteWidth="210dp" />
+
+                <EditText
+                    android:id="@+id/editTextNumberTotalPoint"
+                    android:layout_width="189dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="36dp"
+                    android:autofillHints="false"
+                    android:ems="10"
+                    android:hint="@string/text_labelPoint"
+                    android:inputType="numberDecimal"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editB" />
+
+                <TextView
+                    android:id="@+id/textViewAreaOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="124dp"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/app_spinnerArea"
+                    android:layout_width="163dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="240dp"
+                    android:entries="@array/area_array"
+                    android:fadeScrollbars="true"
+                    android:isScrollContainer="true"
+                    android:minHeight="32dp"
+                    android:nestedScrollingEnabled="true"
+                    android:overScrollMode="ifContentScrolls"
+                    android:persistentDrawingCache="scrolling"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <com.github.mikephil.charting.charts.CombinedChart
         android:id="@+id/combined_chart"
-        android:layout_width="334dp"
-        android:layout_height="379dp"
+        android:layout_width="338dp"
+        android:layout_height="365dp"
         android:layout_marginStart="22dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="22dp"
-        android:background= "@drawable/chart_background"
+        android:background="@drawable/chart_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -143,7 +177,7 @@
     </com.github.mikephil.charting.charts.CombinedChart>
 
     <EditText
-        android:id="@+id/editTextTextExspression"
+        android:id="@+id/editTextTextExpression"
         android:layout_width="209dp"
         android:layout_height="49dp"
         android:layout_marginStart="16dp"
