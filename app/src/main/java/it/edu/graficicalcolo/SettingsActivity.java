@@ -31,6 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
         ANIMATE = switchAnimate.isChecked();
 
     }
+
     public void switchedD(View view) {
         DERIVATE = switchAnimateD.isChecked();
 

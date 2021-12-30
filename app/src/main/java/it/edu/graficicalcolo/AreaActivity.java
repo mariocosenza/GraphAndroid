@@ -55,14 +55,11 @@ public class AreaActivity extends AppCompatActivity {
     public void sendValueCalc(View view) {
         if (spinner.getSelectedItem().toString().equals(spinnerText[2])) {
             drawFunction();
-        }
-        else if (spinner.getSelectedItem().toString().equals(spinnerText[0])) {
+        } else if (spinner.getSelectedItem().toString().equals(spinnerText[0])) {
             drawFunctionRectangle();
-        }
-        else if (spinner.getSelectedItem().toString().equals(spinnerText[1])) {
+        } else if (spinner.getSelectedItem().toString().equals(spinnerText[1])) {
             drawFunctionTrapezoid();
-        }
-        else {
+        } else {
             drawFunctionSimpson();
         }
     }
@@ -100,6 +97,7 @@ public class AreaActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     public void drawFunctionRectangle() {
         try {
             areaFunction.TOTAL_RECT = Integer.parseInt(String.valueOf(editTextNumberTotalPoint.getText()));
@@ -110,7 +108,7 @@ public class AreaActivity extends AppCompatActivity {
             lineDataSet.setDrawCircles(false);
             lineDataSet.setDrawValues(false);
             lineDataSet.setLineWidth(2f);
-            LineDataSet lineDataSetRect = new LineDataSet(areaFunction.rectangleDraw(a,b), "Rectangle");
+            LineDataSet lineDataSetRect = new LineDataSet(areaFunction.rectangleDraw(a, b), "Rectangle");
             lineDataSetRect.setDrawCircles(false);
             lineDataSetRect.setDrawValues(false);
             lineDataSetRect.setLineWidth(1f);
@@ -124,7 +122,7 @@ public class AreaActivity extends AppCompatActivity {
             combinedChart.getDescription().setText(getResources().getString(R.string.text_subtendedArea));
             combinedChart.setData(data);
             combinedChart.invalidate();
-            textViewAreaOut.setText(String.valueOf(areaFunction.rectangle(a,b)));
+            textViewAreaOut.setText(String.valueOf(areaFunction.rectangle(a, b)));
             if (ANIMATE) {
                 combinedChart.animateX(10000);
                 combinedChart.animateY(10000);
@@ -135,6 +133,7 @@ public class AreaActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     public void drawFunctionTrapezoid() {
         try {
             areaFunction.TOTAL_RECT = Integer.parseInt(String.valueOf(editTextNumberTotalPoint.getText()));
@@ -145,7 +144,7 @@ public class AreaActivity extends AppCompatActivity {
             lineDataSet.setDrawCircles(false);
             lineDataSet.setDrawValues(false);
             lineDataSet.setLineWidth(2f);
-            LineDataSet lineDataSetTrap = new LineDataSet(areaFunction.trapezoidDraw(a,b), "Trapezoid");
+            LineDataSet lineDataSetTrap = new LineDataSet(areaFunction.trapezoidDraw(a, b), "Trapezoid");
             lineDataSetTrap.setDrawCircles(false);
             lineDataSetTrap.setDrawValues(false);
             lineDataSetTrap.setLineWidth(1f);
@@ -159,7 +158,7 @@ public class AreaActivity extends AppCompatActivity {
             combinedChart.getDescription().setText(getResources().getString(R.string.text_subtendedArea));
             combinedChart.setData(data);
             combinedChart.invalidate();
-            textViewAreaOut.setText(String.valueOf(areaFunction.trapezoid(a,b)));
+            textViewAreaOut.setText(String.valueOf(areaFunction.trapezoid(a, b)));
             if (ANIMATE) {
                 combinedChart.animateX(10000);
                 combinedChart.animateY(10000);
@@ -170,6 +169,7 @@ public class AreaActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
     public void drawFunctionSimpson() {
         try {
             areaFunction.TOTAL_RECT = Integer.parseInt(String.valueOf(editTextNumberTotalPoint.getText()));
@@ -180,7 +180,7 @@ public class AreaActivity extends AppCompatActivity {
             lineDataSet.setDrawCircles(false);
             lineDataSet.setDrawValues(false);
             lineDataSet.setLineWidth(2f);
-            LineDataSet lineDataSetSimp = new LineDataSet(areaFunction.simpsonDraw(a,b), "Simpson");
+            LineDataSet lineDataSetSimp = new LineDataSet(areaFunction.simpsonDraw(a, b), "Simpson");
             lineDataSetSimp.setDrawCircles(false);
             lineDataSetSimp.setDrawValues(false);
             lineDataSetSimp.setLineWidth(1f);
@@ -194,7 +194,7 @@ public class AreaActivity extends AppCompatActivity {
             combinedChart.getDescription().setText(getResources().getString(R.string.text_subtendedArea));
             combinedChart.setData(data);
             combinedChart.invalidate();
-            textViewAreaOut.setText(String.valueOf(areaFunction.simpson(a,b)));
+            textViewAreaOut.setText(String.valueOf(areaFunction.simpson(a, b)));
             if (ANIMATE) {
                 combinedChart.animateX(10000);
                 combinedChart.animateY(10000);

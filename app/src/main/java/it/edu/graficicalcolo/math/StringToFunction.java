@@ -22,8 +22,9 @@ public class StringToFunction {
         expression.setValue(String.valueOf(iLetter), String.valueOf(i));
         return Float.parseFloat(expression.solve());
     }
+
     public float getDerivativeExpression(String function, float a) {
-        expressionDifferential = new MathExpression("f(x)=" + function + ";" + " diff(f,"+ a +",1)");
+        expressionDifferential = new MathExpression("f(x)=" + function + ";" + " diff(f," + a + ",1)");
         return Float.parseFloat(expressionDifferential.solve());
     }
 
