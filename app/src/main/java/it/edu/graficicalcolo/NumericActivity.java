@@ -110,7 +110,7 @@ public class NumericActivity extends AppCompatActivity {
     public void createDerive() {
         ArrayList<Entry> functionDerivate = new ArrayList<>();
         StringToFunction derivated = new StringToFunction();
-        for (float i = a - 1; i < b + 1; i += 0.1) {
+        for (float i = a - 1; i < b + 1; i += 0.1f) {
             functionDerivate.add(new Entry(i, derivated.getDerivativeExpression(String.valueOf(editTextExspression.getText()), i)));
         }
         lineDerivate = new LineDataSet(functionDerivate, "D");
