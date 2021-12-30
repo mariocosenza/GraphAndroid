@@ -86,7 +86,7 @@
     <EditText
         android:id="@+id/editNumber"
         android:layout_width="96dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="34dp"

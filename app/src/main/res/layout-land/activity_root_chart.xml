@@ -55,7 +55,7 @@
     <EditText
         android:id="@+id/editTextRooting"
         android:layout_width="107dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="27dp"
@@ -74,6 +74,7 @@
         android:layout_marginEnd="42dp"
         android:text="@string/text_rooting"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextRooting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"

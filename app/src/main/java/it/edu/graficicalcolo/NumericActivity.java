@@ -1,6 +1,7 @@
 package it.edu.graficicalcolo;
 
 import static it.edu.graficicalcolo.SettingsActivity.ANIMATE;
+import static it.edu.graficicalcolo.SettingsActivity.DERIVATE;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import java.util.ArrayList;
 
 import it.edu.graficicalcolo.math.NumericCalc;
+import it.edu.graficicalcolo.math.StringToFunction;
 
 public class NumericActivity extends AppCompatActivity {
 
@@ -29,7 +31,7 @@ public class NumericActivity extends AppCompatActivity {
     private final double EPS = 0.00001;
     private EditText editTextNumberDecimalA;
     private EditText editTextNumberDecimalB;
-    private EditText editTextExspression;
+    private EditText editTextExpression;
     private TextView textViewOutRoot;
     private String[] spinnerText;
     private Spinner appSpinnerNumeric;
@@ -37,6 +39,7 @@ public class NumericActivity extends AppCompatActivity {
     private LineDataSet lineDataSet;
     private LineDataSet lineDataSetX;
     private LineDataSet lineDataSetY;
+    private LineDataSet lineDerivate;
     private float a, b;
     private float yMax;
     private float yMin;
@@ -48,11 +51,11 @@ public class NumericActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numeric);
         editTextNumberDecimalA = findViewById(R.id.editTextNumberDecimalA);
         editTextNumberDecimalB = findViewById(R.id.editTextNumberDecimalB);
-        appSpinnerNumeric = findViewById(R.id.app_spinnerNumeric);
+        appSpinnerNumeric = findViewById(R.id.app_spinnerArea);
         textViewOutRoot = findViewById(R.id.textViewOutRoot);
         spinnerText = getResources().getStringArray(R.array.numeric_array);
         lineChartNumeric = findViewById(R.id.lineChartNumeric);
-        editTextExspression = findViewById(R.id.editTextTextExspressionNumeric);
+        editTextExpression = findViewById(R.id.editTextTextExspressionNumeric);
     }
 
     public void getNumeber() {
@@ -73,7 +76,7 @@ public class NumericActivity extends AppCompatActivity {
     public void selectMethod(View view) {
         try {
             getNumeber();
-            String function = String.valueOf(editTextExspression.getText());
+            String function = String.valueOf(editTextExpression.getText());
             System.out.println(function);
             numericCalc.setMathExpression(function);
             findMax(a, b);
@@ -104,6 +107,20 @@ public class NumericActivity extends AppCompatActivity {
         lineDataSetX.setDrawValues(false);
     }
 
+    public void createDerive() {
+        ArrayList<Entry> functionDerivate = new ArrayList<>();
+        StringToFunction derivated = new StringToFunction();
+        for (float i = a - 1; i < b + 1; i += 0.1f) {
+            functionDerivate.add(new Entry(i, derivated.getDerivativeExpression(String.valueOf(editTextExpression.getText()), i)));
+        }
+        lineDerivate = new LineDataSet(functionDerivate, "D");
+        lineDerivate.setColor(Color.YELLOW);
+        lineDerivate.setLineWidth(2f);
+        lineDerivate.setDrawCircles(false);
+        lineDerivate.setDrawValues(false);
+    }
+
+
     public void createYline() {
         ArrayList<Entry> lineY = new ArrayList<>();
         lineY.add(new Entry(0, (float) numericCalc.getFunction(a - 1)));
@@ -117,7 +134,7 @@ public class NumericActivity extends AppCompatActivity {
 
     public void setChart() {
         functionEntry.clear();
-        for (float i = a - 1; i <= b + 1; i += 0.1) {
+        for (float i = a - 1; i <= b + 1; i += 0.1f) {
             functionEntry.add(new Entry(i, (float) numericCalc.getFunction(i)));
         }
         lineDataSet = new LineDataSet(functionEntry, "Point");
@@ -135,7 +152,7 @@ public class NumericActivity extends AppCompatActivity {
 
     public void findMax(float a, float b) {
         yMax = (float) numericCalc.getFunction(a);
-        for (float i = a; i < b; i += 0.1) {
+        for (float i = a; i < b; i += 0.1f) {
             if (numericCalc.getFunction(i) > yMax) {
                 yMax = (float) numericCalc.getFunction(i);
             }
@@ -144,7 +161,7 @@ public class NumericActivity extends AppCompatActivity {
 
     public void findMin(float a, float b) {
         yMin = (float) numericCalc.getFunction(a);
-        for (float i = a; i < b; i += 0.1) {
+        for (float i = a; i < b; i += 0.1f) {
 
             if (numericCalc.getFunction(i) < yMin) {
                 yMax = (float) numericCalc.getFunction(i);
@@ -166,10 +183,14 @@ public class NumericActivity extends AppCompatActivity {
         LineDataSet lineDataSetAB = new LineDataSet(squareEntry, "AB");
         lineDataSetAB.setDrawCircles(false);
         lineDataSetAB.setDrawValues(false);
+        lines.add(lineDataSetY);
         lines.add(lineDataSetAB);
         lines.add(lineDataSet);
         lines.add(lineDataSetX);
-        lines.add(lineDataSetY);
+        if (DERIVATE) {
+            createDerive();
+            lines.add(lineDerivate);
+        }
         LineData line = new LineData(lines);
         lineChartNumeric.setData(line);
         lineDataSetAB.setDrawCircles(false);

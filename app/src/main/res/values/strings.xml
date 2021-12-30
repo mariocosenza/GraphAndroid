@@ -22,6 +22,12 @@
         <item>Rope</item>
         <item>Secant</item>
     </string-array>
+    <string-array name="area_array">
+        <item>Rectangle</item>
+        <item>Trapezoid</item>
+        <item>Random</item>
+        <item>Simpson</item>
+    </string-array>
     <string name="text_ANumeric">A:</string>
     <string name="text_BNumeric">B:</string>
     <string name="text_settings">settings</string>
@@ -31,6 +37,7 @@
     <string name="text_labelA">Enter A</string>
     <string name="text_labelB">Enter B</string>
     <string name="text_animateChart">Animate Chart</string>
+    <string name="text_settingD">Derivative Calculation</string>
     <string name="text_labelPoint">Enter Total Point</string>
     <string name="text_Area">Area:</string>
     <string name="text_subtendedArea">Subtended area</string>
@@ -71,6 +78,7 @@
 
 
     ]]></string>
+
 
 
 </resources>

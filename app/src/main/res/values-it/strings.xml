@@ -36,7 +36,12 @@
     <string name="text_labelPoint">Inserisci Punti Totali</string>
     <string name="text_Area">Area:</string>
     <string name="text_subtendedArea">Area sottesa</string>
-
+    <string-array name="area_array">
+        <item>Rettangolo</item>
+        <item>Trapezi</item>
+        <item>Random</item>
+        <item>Simpson</item>
+    </string-array>
 
 
     <string name="license"><![CDATA[
@@ -75,5 +80,6 @@
     <string name="hintExpression">Inserisci espressione</string>
     <string name="text_point">Punti</string>
     <string name="text_hint_root">Inserisci radicando</string>
+    <string name="text_settingD">Calcolo differenziale</string>
 
 </resources>
