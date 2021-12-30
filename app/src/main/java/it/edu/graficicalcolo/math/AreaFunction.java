@@ -105,8 +105,9 @@ public class AreaFunction {
     }
 
     public ArrayList<Entry> rectangleDraw(float a, float b) {
+        rectEntries.clear();
         float h = (b - a) / TOTAL_RECT;
-        for (float i = a; i <= b; i += h) {
+        for (float i = a; i <= b-h; i += h) {
             rectEntries.add(new Entry(i, 0));
             rectEntries.add(new Entry(i, myFunction(i)));
             rectEntries.add(new Entry(i + h, myFunction(i)));
@@ -127,8 +128,9 @@ public class AreaFunction {
     }
 
     public ArrayList<Entry> trapezoidDraw(float a, float b) {
+        trapezoidEntries.clear();
         float h = (b - a) / TOTAL_RECT;
-        for (float i = a; i <= b; i += h) {
+        for (float i = a; i <= b-h; i += h) {
             trapezoidEntries.add(new Entry(i, 0));
             trapezoidEntries.add(new Entry(i, myFunction(i)));
             trapezoidEntries.add(new Entry(i + h, myFunction(i + h)));
@@ -152,7 +154,8 @@ public class AreaFunction {
     public ArrayList<Entry> simpsonDraw(float a, float b) {
         float x1, y1, x2, y2, x3, y3;
         float denom, A, B, C;
-        for (float i = a; i <= b; i += h) {
+        simpsonEntries.clear();
+        for (float i = a; i <= b-h; i += h) {
             x1 = i;
             y1 = myFunction(i);
             x2 = i + s;
@@ -164,7 +167,7 @@ public class AreaFunction {
             B = (x3 * x3 * (y1 - y2) + x2 * x2 * (y3 - y1) + x1 * x1 * (y2 - y3)) / denom;
             C = (x2 * x3 * (x2 - x3) * y1 + x3 * x1 * (x3 - x1) * y2 + x1 * x2 * (x1 - x2) * y3) / denom;
 
-            for (float j = i; j < i + h; j += 0.1f) {
+            for (float j = i; j <= i + h; j += 0.1f) {
                 simpsonEntries.add(new Entry(j, A * j * j + B * j + C));
             }
         }
