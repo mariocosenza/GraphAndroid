@@ -31,7 +31,7 @@ public class NumericActivity extends AppCompatActivity {
     private final double EPS = 0.00001;
     private EditText editTextNumberDecimalA;
     private EditText editTextNumberDecimalB;
-    private EditText editTextExspression;
+    private EditText editTextExpression;
     private TextView textViewOutRoot;
     private String[] spinnerText;
     private Spinner appSpinnerNumeric;
@@ -55,7 +55,7 @@ public class NumericActivity extends AppCompatActivity {
         textViewOutRoot = findViewById(R.id.textViewOutRoot);
         spinnerText = getResources().getStringArray(R.array.numeric_array);
         lineChartNumeric = findViewById(R.id.lineChartNumeric);
-        editTextExspression = findViewById(R.id.editTextTextExspressionNumeric);
+        editTextExpression = findViewById(R.id.editTextTextExspressionNumeric);
     }
 
     public void getNumeber() {
@@ -76,7 +76,7 @@ public class NumericActivity extends AppCompatActivity {
     public void selectMethod(View view) {
         try {
             getNumeber();
-            String function = String.valueOf(editTextExspression.getText());
+            String function = String.valueOf(editTextExpression.getText());
             System.out.println(function);
             numericCalc.setMathExpression(function);
             findMax(a, b);
@@ -111,7 +111,7 @@ public class NumericActivity extends AppCompatActivity {
         ArrayList<Entry> functionDerivate = new ArrayList<>();
         StringToFunction derivated = new StringToFunction();
         for (float i = a - 1; i < b + 1; i += 0.1f) {
-            functionDerivate.add(new Entry(i, derivated.getDerivativeExpression(String.valueOf(editTextExspression.getText()), i)));
+            functionDerivate.add(new Entry(i, derivated.getDerivativeExpression(String.valueOf(editTextExpression.getText()), i)));
         }
         lineDerivate = new LineDataSet(functionDerivate, "D");
         lineDerivate.setColor(Color.YELLOW);
