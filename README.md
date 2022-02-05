@@ -1,7 +1,7 @@
 # GraphAndroid
 [![CodeFactor](https://www.codefactor.io/repository/github/snepgaming/graphandroid/badge)](https://www.codefactor.io/repository/github/snepgaming/graphandroid) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/SnepGaming/GraphAndroid?color=G)](https://github.com/SnepGaming/GraphAndroid/releases/tag/v1.2.0)</br>
 School Project App for Android with Java </br>
-Credit to: https://github.com/gbenroscience/ParserNG 
+Credit to: [![ParserNG]https://github.com/gbenroscience/ParserNG  </br>
 _The variable for the expression should be written in capital letter._
 
 ![Main Activity](https://db5pap001files.storage.live.com/y4m_m-yibvcLjTPg2ge5J6r2I46aBVkbgmah8OyfpXBIRo_VQS3K8JQ7VmPza9hRbJgTuVCpo5Md_a7XhPoYMeB4k1UhuDim-8jebeyrujIx38fLtM8jcenR6UUh0gOGuTHVxz-zxeChohDp_qM48nE9cifQzf8DvlLpVKX7Ve-gmtvGeBW1xRoSkDlF9_cnfuJ?width=300&height=450&cropmode=none) 
